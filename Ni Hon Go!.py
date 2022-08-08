@@ -12,7 +12,7 @@ def main_menu():
 # Sub menu function of what the user wants to do with chosen alphabet
 def sub_menu():
     global sub_menu_choice
-    sub_menu_choice = input(int("What would you like to do with this alphabet:"))
+    sub_menu_choice = input(int("What would you like to do with this alphabet:\n 1. preview/ learning \n 2. Game/ test \n 3. game rules"))
     return
 
 
@@ -23,3 +23,4 @@ print("Welcome to Ni Hon Go!")
 name = input("what is your name?")
 print("Hello {}".format(name).title())
 main_menu()
+sub_menu()
