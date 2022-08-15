@@ -1,3 +1,4 @@
+import random
 # Affrimations
 wrong_response = ["Better luck next time!",  "Keep trying!", "Almost!", "Don't give up"]
 right_response = ["Well-done", "Good job!", "Excellent", "Your getting the hang of this!"]
@@ -24,6 +25,27 @@ level_5_kat_dic = {"ヤ": "ya", "ユ": "yu", "ヨ": "yo", "ワ": "wa", "ン": "n
 level_6_kat_dic = {"ガ": "ga", "ギ": "gi", "グ": "gu", "ゲ": "ge", "ゴ": "go", "ザ": "za", "ジ": "ji", "ズ": "zu", "ゼ": "ze", "ゾ": "zo"}
 level_7_kat_dic = {"バ": "ba", "び": "bi", "ブ": "bu", "ベ": "be", "ボ": "bo", "ダ": "da", "デ": "de", "ド": "do"}
 level_8_kat_dic = {"パ": "pa", "ピ": "pi", "プ": "pu", "ペ": "pe", "ポ": "po"}
+
+# Create a list of the keys from the level dictionaries
+
+level_1_hir_keys = list(level_1_hir_dic.keys())
+level_2_hir_keys = list(level_2_hir_dic.keys())
+level_3_hir_keys = list(level_3_hir_dic.keys())
+level_4_hir_keys = list(level_4_hir_dic.keys())
+level_5_hir_keys = list(level_5_hir_dic.keys())
+level_6_hir_keys = list(level_6_hir_dic.keys())
+level_7_hir_keys = list(level_7_hir_dic.keys())
+level_8_hir_keys = list(level_8_hir_dic.keys())
+
+level_1_kat_keys = list(level_1_kat_dic.keys())
+level_2_kat_keys = list(level_2_kat_dic.keys())
+level_3_kat_keys = list(level_3_kat_dic.keys())
+level_4_kat_keys = list(level_4_kat_dic.keys())
+level_5_kat_keys = list(level_5_kat_dic.keys())
+level_6_kat_keys = list(level_6_kat_dic.keys())
+level_7_kat_keys = list(level_7_kat_dic.keys())
+level_8_kat_keys = list(level_8_kat_dic.keys())
+
 # Give the overall score to the user
 
 overall_score = 0
@@ -46,7 +68,7 @@ def level_menu():
 
 # Introduce the game and ask the user for their name
 print("Welcome to Ni Hon Go!")
-name = input("what is your name?\n:")
+name = input("what is your name?\nNAME:")
 print("Hello {}".format(name).title())
 
 # Call menus for user
@@ -54,20 +76,36 @@ phon_alpha_result = main_menu()
 sub_menu_result = sub_menu()
 chosen_level = level_menu()
 
-# Print preview of hiragana and katakana
-if sub_menu_result == "1":
-    if phon_alpha_result == "1":
+# Hiragana alphabet path
+if phon_alpha_result == "1":
+
+    # Print preview of hiragana and katakana
+    if sub_menu_result == "1":
         print("Hiragana Chart: \n あ = a, い = i　う = u,　え = e,　お = o ")
-    if phon_alpha_result == "2":
-        print("Katakana Chart: \n waiting for keyboard")
-if sub_menu_result == "2":
-    if chosen_level == "1":
-       print("In this level we will be practicing:\n {}".format(level_1_hir_dic))
-    if chosen_level == "2":
-        if overall_score <= 100:
-            print("Try making sure you have got all questions right in the previous level")
-        else:
-            print("")
+    if sub_menu_result == "2":
+        # Level one
+        if chosen_level == "1":
+            print("In this level we will be practicing:\n {}".format(level_1_hir_dic))
+            start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+            random.shuffle(level_1_hir_keys)
+            while start == "go":
+                for hir in level_1_hir_keys:
+                    answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, overall_score))
+                    if answer == level_1_hir_dic[hir]:
+                        random.shuffle(right_response)
+                        print("{}".format(right_response[0]))
+                        overall_score += 10
+                    else:
+                        random.shuffle(wrong_response)
+                        print("{}".format(wrong_response[0]))
+                        overall_score -= 5
+            if start == "stop":
+                sub_menu()
+        if chosen_level == "2":
+            if overall_score <= 100:
+                print("Try making sure you have got all questions right in the previous level")
+            else:
+                print("")
 
 
 
