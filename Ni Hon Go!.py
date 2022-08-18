@@ -46,14 +46,11 @@ level_6_kat_keys = list(level_6_kat_dic.keys())
 level_7_kat_keys = list(level_7_kat_dic.keys())
 level_8_kat_keys = list(level_8_kat_dic.keys())
 
-# Give the overall score to the user
-
-overall_score = 0
-
 # Main menu function for the user to choose hiragana or katakana
-def main_menu():
+phon_alpha_choice = 0
+def main_menu(phon_alpha_choice):
     """ This function is giving the user a choice of which phonetic alphabet they want to practice. """
-    phon_alpha_choice = input("What Japanese alphabet would you like to practice (enter number of choice)? \n 1. Hiragana \n 2. Katakana \n Alphabet:")
+    phon_alpha_choice = int(input("What Japanese alphabet would you like to practice (enter number of choice)? \n 1. Hiragana \n 2. Katakana \n Alphabet:"))
     return phon_alpha_choice
 
 # Sub menu function of what the user wants to do with chosen alphabet
@@ -72,17 +69,17 @@ name = input("what is your name?\nNAME:")
 print("Hello {}".format(name).title())
 
 # Call menus for user
-phon_alpha_result = main_menu()
+phon_alpha_result = main_menu(phon_alpha_choice)
 sub_menu_result = sub_menu()
 chosen_level = level_menu()
 
 # Hiragana alphabet path
-if phon_alpha_result == "1":
+while phon_alpha_result == 1:
 
     # Print preview of hiragana and katakana
-    if sub_menu_result == "1":
+    while sub_menu_result == "1":
         print("Hiragana Chart: \n あ = a, い = i　う = u,　え = e,　お = o ")
-    if sub_menu_result == "2":
+    while sub_menu_result == "2":
         # Level one
         if chosen_level == "1":
             print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_1_hir_dic))
@@ -99,7 +96,7 @@ if phon_alpha_result == "1":
                         random.shuffle(wrong_response)
                         print("{}".format(wrong_response[0]))
                         overall_score -= 5
-                if overall_score > 0 and < 100:
+                if overall_score > 0 and overall_score < 100:
                     print("Good job! you got {} points".format(overall_score))
                     level_menu()
                 elif overall_score == 0:
@@ -109,17 +106,106 @@ if phon_alpha_result == "1":
                     print("Well done you got 100 points! you can move onto the next level.")
                     level_menu()
             if start == "stop":
-                sub_menu()
+                chosen_level = "0"
+                sub_menu(chosen_level)
+# Level 2
         if chosen_level == "2":
             if overall_score <= 100:
-                print("Try making sure you have got all questions right in the previous level")
+                print("You dont have access to this level yet, try making sure you have got all questions right in the previous level")
+                level_menu()
             else:
-                print("")
-
-
-
+                print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_2_hir_dic))
+                start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+                random.shuffle(level_2_hir_keys)
+                while start == "go":
+                    for hir in level_2_hir_keys:
+                        answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, overall_score))
+                        if answer == level_2_hir_dic[hir]:
+                            random.shuffle(right_response)
+                            print("{}".format(right_response[0]))
+                            overall_score += 10
+                        else:
+                            random.shuffle(wrong_response)
+                            print("{}".format(wrong_response[0]))
+                            overall_score -= 5
+                    if overall_score > 0 and overall_score < 100:
+                        print("Good job! you got {} points".format(overall_score))
+                        level_menu()
+                    elif overall_score == 0:
+                        print("Try again")
+                        level_menu()
+                    elif overall_score == 100:
+                        print("Well done you got 100 points! you can move onto the next level.")
+                        level_menu()
+                if start == "stop":
+                    sub_menu()
+# Level 3
+        if chosen_level == "3":
+            if overall_score <= 100:
+                print("Try making sure you have got all questions right in the previous level")
+                level_menu()
+            else:
+                print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_3_hir_dic))
+                start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+                random.shuffle(level_3_hir_keys)
+                while start == "go":
+                    for hir in level_3_hir_keys:
+                        answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, overall_score))
+                        if answer == level_3_hir_dic[hir]:
+                            random.shuffle(right_response)
+                            print("{}".format(right_response[0]))
+                            overall_score += 10
+                        else:
+                            random.shuffle(wrong_response)
+                            print("{}".format(wrong_response[0]))
+                            overall_score -= 5
+                    if overall_score > 0 and overall_score < 100:
+                        print("Good job! you got {} points".format(overall_score))
+                        level_menu()
+                    elif overall_score == 0:
+                        print("Try again")
+                        level_menu()
+                    elif overall_score == 100:
+                        print("Well done you got 100 points! you can move onto the next level.")
+                        level_menu()
+                if start == "stop":
+                    sub_menu()
+# Level 4
+        if chosen_level == "4":
+            if overall_score <= 100:
+                print("Try making sure you have got all questions right in the previous level")
+                level_menu()
+            else:
+                print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_2_hir_dic))
+                start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+                random.shuffle(level_2_hir_keys)
+                while start == "go":
+                    for hir in level_2_hir_keys:
+                        answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, overall_score))
+                        if answer == level_1_hir_dic[hir]:
+                            random.shuffle(right_response)
+                            print("{}".format(right_response[0]))
+                            overall_score += 10
+                        else:
+                            random.shuffle(wrong_response)
+                            print("{}".format(wrong_response[0]))
+                            overall_score -= 5
+                    if overall_score > 0 and overall_score < 100:
+                        print("Good job! you got {} points".format(overall_score))
+                        level_menu()
+                    elif overall_score == 0:
+                        print("Try again")
+                        level_menu()
+                    elif overall_score == 100:
+                        print("Well done you got 100 points! you can move onto the next level.")
+                        level_menu()
+                if start == "stop":
+                    sub_menu()
+elif phon_alpha_result == 2:
+    print("katakana")
 # Write game rules
-if sub_menu_result == "3":
-    print(",ljgfklutf")
-
-
+    if sub_menu_result == "3":
+        print("mmmammm")
+elif phon_alpha_result > 2:
+    print("Not an option")
+    sub_menu()
