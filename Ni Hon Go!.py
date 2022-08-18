@@ -85,7 +85,7 @@ if phon_alpha_result == "1":
     if sub_menu_result == "2":
         # Level one
         if chosen_level == "1":
-            print("In this level we will be practicing:\n {}".format(level_1_hir_dic))
+            print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_1_hir_dic))
             start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
             random.shuffle(level_1_hir_keys)
             while start == "go":
@@ -99,6 +99,15 @@ if phon_alpha_result == "1":
                         random.shuffle(wrong_response)
                         print("{}".format(wrong_response[0]))
                         overall_score -= 5
+                if overall_score > 0 and < 100:
+                    print("Good job! you got {} points".format(overall_score))
+                    level_menu()
+                elif overall_score == 0:
+                    print("Try again")
+                    level_menu()
+                elif overall_score == 100:
+                    print("Well done you got 100 points! you can move onto the next level.")
+                    level_menu()
             if start == "stop":
                 sub_menu()
         if chosen_level == "2":
