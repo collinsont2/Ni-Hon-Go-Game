@@ -16,6 +16,7 @@ level_5_hir_dic = {"や": "ya", "ゆ": "yu", "よ": "yo", "わ": "wa", "ん": "n
 level_6_hir_dic = {"が": "ga", "ぎ": "gi", "ぐ": "gu", "げ": "ge", "ご": "go", "ざ": "za", "じ": "ji", "ず": "zu", "ぜ": "ze", "そ": "zo"}
 level_7_hir_dic = {"ば": "ba", "び": "bi", "ぶ": "bu", "べ": "be", "ぼ": "bo", "だ": "da", "で": "de", "ど": "do"}
 level_8_hir_dic = {"ぱ": "pa", "ぴ": "pi", "ぷ": "pu", "ぺ": "pe", "ぽ": "po"}
+final_hir_dic = level_1_hir_dic | level_2_hir_dic | level_3_hir_dic | level_4_hir_dic | level_5_hir_dic | level_6_hir_dic | level_7_hir_dic | level_8_hir_dic
 
 # Create a dictionary for each level of katakana
 level_1_kat_dic = {"ア": "a", "イ": "i", "ウ": "u", "エ": "e", "オ": "o", "カ": "ka", "キ": "ki", "ク": "ku", "ケ": "ke", "コ": "ko"}
@@ -26,7 +27,7 @@ level_5_kat_dic = {"ヤ": "ya", "ユ": "yu", "ヨ": "yo", "ワ": "wa", "ン": "n
 level_6_kat_dic = {"ガ": "ga", "ギ": "gi", "グ": "gu", "ゲ": "ge", "ゴ": "go", "ザ": "za", "ジ": "ji", "ズ": "zu", "ゼ": "ze", "ゾ": "zo"}
 level_7_kat_dic = {"バ": "ba", "び": "bi", "ブ": "bu", "ベ": "be", "ボ": "bo", "ダ": "da", "デ": "de", "ド": "do"}
 level_8_kat_dic = {"パ": "pa", "ピ": "pi", "プ": "pu", "ペ": "pe", "ポ": "po"}
-
+final_kat_dic = level_1_kat_dic | level_2_kat_dic | level_3_kat_dic | level_4_kat_dic | level_5_kat_dic | level_6_kat_dic | level_7_kat_dic | level_8_kat_dic
 # Create a list of the keys from the level dictionaries
 
 level_1_hir_keys = list(level_1_hir_dic.keys())
@@ -37,6 +38,7 @@ level_5_hir_keys = list(level_5_hir_dic.keys())
 level_6_hir_keys = list(level_6_hir_dic.keys())
 level_7_hir_keys = list(level_7_hir_dic.keys())
 level_8_hir_keys = list(level_8_hir_dic.keys())
+final_hir_keys = list(final_hir_dic.keys())
 
 level_1_kat_keys = list(level_1_kat_dic.keys())
 level_2_kat_keys = list(level_2_kat_dic.keys())
@@ -46,7 +48,9 @@ level_5_kat_keys = list(level_5_kat_dic.keys())
 level_6_kat_keys = list(level_6_kat_dic.keys())
 level_7_kat_keys = list(level_7_kat_dic.keys())
 level_8_kat_keys = list(level_8_kat_dic.keys())
+final_kat_keys = list(final_kat_dic.keys())
 
+print(final_kat_keys)
 # Main menu function for the user to choose hiragana or katakana
 def main_menu():
     """ This function is giving the user a choice of which phonetic alphabet they want to practice. """
@@ -56,7 +60,7 @@ def main_menu():
 # Sub menu function of what the user wants to do with chosen alphabet
 def sub_menu():
     """ This function is giving the user a choice on what to do with the chosen alphabet, as well as going back to choose a different alphabet."""
-    sub_menu_choice = input("What would you like to do with this alphabet:\n 1. preview/ learning \n 2. Game/ test \n 3. game rules\n 4. Go back to main menu \n CHOICE:")
+    sub_menu_choice = input("What would you like to do with this alphabet:\n 1. preview/ learning \n 2. Game/ test \n 3. Go back to main menu \n CHOICE:")
     return sub_menu_choice
 # Menu of hiragana levels the user can choose from
 def hir_level_menu(hir_overall_score):
@@ -162,7 +166,10 @@ while pate == True:
 
         # Print preview of hiragana
         if sub_menu_result == "1":
-            print("Hiragana Chart: \n あ = a, い = i　う = u,　え = e,　お = o ")
+            done = input("Hiragana Chart: \n あ = a, い = i　う = u,　え = e,　お = o \n か = ka, き = ki, く = ku, け = ke, こ = ko\n"
+                         "サ = sa, シ = shi, ス = su, セ = se, ソ = so \n タ: ta, チ: chi, ツ: tsu, テ: te, ト: to")
+            if done == "":
+                sub_menu()
         while sub_menu_result == "2":
             hir_chosen_level = hir_level_menu(hir_overall_score)
 # Level one hiragana
@@ -445,17 +452,47 @@ while pate == True:
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
-            # Final level
+# Hiragana final level
             if hir_chosen_level == "9":
-                print("Under construction")
-            # go back to main menu
+                if hir_overall_score < 690:
+                     print("You dont have access to this level yet, try making sure you have got all questions right in the previous level")
+                else:
+                    print("This level is the final level! Well done you have done great! \nThis level will go over EVERY character you have learnt so far.")
+                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+                    random.shuffle(final_hir_keys)
+                    while start == "go":
+                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+                        for hir in final_hir_keys:
+                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
+                            if answer == 'stop':
+                                start = 'Neutral'
+                                break
+                            if hir_overall_score < 1380:
+                                if answer == final_hir_dic[hir]:
+                                    random.shuffle(right_response)
+                                    print("{}".format(right_response[0]))
+                                    hir_overall_score += 10
+                                else:
+                                    random.shuffle(wrong_response)
+                                    print("{}".format(wrong_response[0]))
+                        if hir_overall_score > 690:
+                            print("Good job! you got {} points, Keep practicing and see how far you go".format(hir_overall_score))
+                            start = 'Neutral'
+                        elif hir_overall_score == 690:
+                            print("Try again")
+                            start = 'Neutral'
+                        elif hir_overall_score == 690:
+                            print("Well done you got 690 points! you can move onto the FINAL level.")
+                            start = 'Neutral'
+                    if start == "stop":
+                        sub_menu()
+
+
+            # Go back to main menu
             if hir_chosen_level == "10":
                 main_menu()
-        # Print game rules
-        if sub_menu_result == "3":
-            print("Under construction")
         # Return to main menu
-        if sub_menu_result == "4":
+        if sub_menu_result == "3":
             main_menu()
         else:
             print("That is not an option")
@@ -790,15 +827,43 @@ while pate == True:
                         sub_menu()
             # Final level
             if kat_chosen_level == "9":
-                print("Under construction")
+                if kat_overall_score < 690:
+                     print("You dont have access to this level yet, try making sure you have got all questions right in the previous level")
+                else:
+                    print("This level is the final level! Well done you have done great! \nThis level will go over EVERY character you have learnt so far.")
+                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+                    random.shuffle(final_kat_keys)
+                    while start == "go":
+                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+                        for kat in final_kat_keys:
+                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
+                            if answer == 'stop':
+                                start = 'Neutral'
+                                break
+                            if kat_overall_score < 1380:
+                                if answer == final_kat_dic[kat]:
+                                    random.shuffle(right_response)
+                                    print("{}".format(right_response[0]))
+                                    kat_overall_score += 10
+                                else:
+                                    random.shuffle(wrong_response)
+                                    print("{}".format(wrong_response[0]))
+                        if kat_overall_score > 690:
+                            print("Good job! you got {} points, Keep practicing and see how far you go".format(kat_overall_score))
+                            start = 'Neutral'
+                        elif kat_overall_score == 690:
+                            print("Try again")
+                            start = 'Neutral'
+                        elif kat_overall_score == 690:
+                            print("Well done you got 690 points! you can move onto the FINAL level.")
+                            start = 'Neutral'
+                    if start == "stop":
+                        sub_menu()
             # go back to main menu
             if kat_chosen_level == "10":
                 main_menu()
-        # Print game rules
-        if sub_menu_result == "3":
-            print("Under construction")
         # Return to main menu
-        if sub_menu_result == "4":
+        if sub_menu_result == "3":
             main_menu()
         else:
             print("That is not an option")
