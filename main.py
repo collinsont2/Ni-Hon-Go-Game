@@ -50,7 +50,6 @@ level_7_kat_keys = list(level_7_kat_dic.keys())
 level_8_kat_keys = list(level_8_kat_dic.keys())
 final_kat_keys = list(final_kat_dic.keys())
 
-print(final_kat_keys)
 # Main menu function for the user to choose hiragana or katakana
 def main_menu():
     """ This function is giving the user a choice of which phonetic alphabet they want to practice. """
@@ -101,10 +100,11 @@ def hir_level_menu(hir_overall_score):
         hir_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n"
             " Level 7 (Complete)\n Level 8 (Complete)\n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
-    # if hir_overall_score >= 100:
-    #     hir_level_menu_choice = input(
-    #         "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 \n Level 3 \n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n Final Level (9)\n"
-    #         "Go back to main menu (10) \n LEVEL:")
+    if hir_overall_score >= 1380:
+        hir_level_menu_choice = input(
+            "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n "
+            "Level 7 (Complete)\n Level 8 (Complete)\n Final Level (9)(Complete)\n"
+            "Go back to main menu (10) \n LEVEL:")
     return hir_level_menu_choice
 
 # Menu of katakana levels the user can choose from
@@ -135,22 +135,24 @@ def kat_level_menu(kat_overall_score):
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 \n Level 7 \n"
             " Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
     if kat_overall_score >= 560:
-        level_menu_choice = input(
+        kat_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n"
             " Level 7 \n Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
     if kat_overall_score >= 640:
-        level_menu_choice = input(
+        kat_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n"
             " Level 7 (Complete)\n Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
     if kat_overall_score >= 690:
-        level_menu_choice = input(
+        kat_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n"
             " Level 7 (Complete)\n Level 8 (Complete)\n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
-    # if kat_overall_score >= 100:
-    #     kat_level_menu_choice = input(
-    #         "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 \n Level 3 \n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n Final Level (9)\n"
-    #         "Go back to main menu (10) \n LEVEL:")
+    if kat_overall_score >= 1380:
+        kat_level_menu_choice = input(
+            "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n "
+            "Level 7 (Complete)\n Level 8 (Complete)\n Final Level (9)(Complete)\n"
+            "Go back to main menu (10) \n LEVEL:")
     return kat_level_menu_choice
+
 # Introduce the game and ask the user for their name
 print("Welcome to Ni Hon Go!")
 name = input("what is your name?\nNAME:")
@@ -166,10 +168,15 @@ while pate == True:
 
         # Print preview of hiragana
         if sub_menu_result == "1":
-            done = input("Hiragana Chart: \n あ = a, い = i　う = u,　え = e,　お = o \n か = ka, き = ki, く = ku, け = ke, こ = ko\n"
-                         "サ = sa, シ = shi, ス = su, セ = se, ソ = so \n タ: ta, チ: chi, ツ: tsu, テ: te, ト: to")
-            if done == "":
-                sub_menu()
+            done = input("Hiragana Chart: \n あ = a, い = i　う = u,　え = e,　お = o \n か = ka, き = ki, く = ku, け = ke, こ = ko\n "
+                         "さ = sa, し = shi, す = su, せ = se, そ = so \n た = ta, ち = chi, つ = tsu, て = te, と = to\n "
+                         "な = na, に = ni, ぬ = nu, ね = ne, の = no \n は = ha, ひ = hi, ふ = fu, へ = he, ほ = ho\n "
+                         "ま = ma, み = mi, む = mu, め = me, も = mo \n ら = ra, り = ri, る = ru, れ = re, ろ = ro \n "
+                         "や = ya, ゆ = yu, よ = yo \n わ = wa, ん = n, を = wo\n "
+                         "が = ga, ぎ = gi, ぐ = gu, げ = ge, ご = go \n ざ = za, じ = ji, ず = zu, ぜ = ze, そ = zo\n "
+                         "ば = ba, び = bi, ぶ = bu, べ = be, ぼ = bo \n だ = da, で = de, ど = do \n "
+                         "ぱ = pa, ぴ = pi, ぷ = pu, ぺ = pe, ぽ = po\n Enter 'x' when you are done.")
+
         while sub_menu_result == "2":
             hir_chosen_level = hir_level_menu(hir_overall_score)
 # Level one hiragana
@@ -481,8 +488,8 @@ while pate == True:
                         elif hir_overall_score == 690:
                             print("Try again")
                             start = 'Neutral'
-                        elif hir_overall_score == 690:
-                            print("Well done you got 690 points! you can move onto the FINAL level.")
+                        elif hir_overall_score == 1380:
+                            print("Well done you got 1380 points! Keep playing and see how many points you can get!")
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
@@ -504,7 +511,16 @@ while pate == True:
 
         # Print preview of katakana
         if sub_menu_result == "1":
-            print("Katakana Chart: \n あ = a, い = i　う = u,　え = e,　お = o ")
+            done = input("Hiragana Chart: \n ア = a, イ = i　ウ = u,　エ = e,　オ = o \n カ = ka, キ = ki, ク = ku, ケ = ke, コ = ko\n "
+                         "サ = sa, シ = shi, ス = su, セ = se, ソ = so \n タ = ta, チ = chi, ツ = tsu, テ = te, ト = to\n "
+                         "ナ = na, ニ = ni, ヌ = nu, ネ = ne, ノ = no \n ハ = ha, ヒ = hi, フ = fu, ヘ = he, ホ = ho\n "
+                         "マ = ma, ミ = mi, ム = mu, メ = me, モ = mo \n ラ = ra, リ = ri, ル = ru, レ = re, ロ = ro \n "
+                         "ヤ = ya, ユ = yu, ヨ = yo \n ワ = wa, ン = n, ヲ = wo\n "
+                         "ガ = ga,　ギ = gi, グ = gu, ゲ = ge, ゴ = go \n ザ = za, ジ = ji, ズ = zu, ゼ = ze, ゾ = zo\n "
+                         "バ = ba, ビ = bi, ブ = bu, ベ = be, ボ = bo \n ダ = da,　デ　= de, ド = do \n "
+                         "パ = pa, ピ = pi, プ = pu, ペ = pe, ポ = po\n Enter 'x' when you are done.")
+            if done == "x":
+                break
         while sub_menu_result == "2":
             kat_chosen_level = kat_level_menu(kat_overall_score)
 # Level one katakana
@@ -825,7 +841,7 @@ while pate == True:
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
-            # Final level
+            # Katakana final level
             if kat_chosen_level == "9":
                 if kat_overall_score < 690:
                      print("You dont have access to this level yet, try making sure you have got all questions right in the previous level")
@@ -854,8 +870,8 @@ while pate == True:
                         elif kat_overall_score == 690:
                             print("Try again")
                             start = 'Neutral'
-                        elif kat_overall_score == 690:
-                            print("Well done you got 690 points! you can move onto the FINAL level.")
+                        elif kat_overall_score == 1380:
+                            print("Well done you got 1380 points! Keep playing and see how many points you can get!")
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
