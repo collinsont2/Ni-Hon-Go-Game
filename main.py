@@ -176,6 +176,8 @@ while pate == True:
                          "が = ga, ぎ = gi, ぐ = gu, げ = ge, ご = go \n ざ = za, じ = ji, ず = zu, ぜ = ze, そ = zo\n "
                          "ば = ba, び = bi, ぶ = bu, べ = be, ぼ = bo \n だ = da, で = de, ど = do \n "
                          "ぱ = pa, ぴ = pi, ぷ = pu, ぺ = pe, ぽ = po\n Enter 'x' when you are done.")
+            if done == "x":
+                continue
 
         while sub_menu_result == "2":
             hir_chosen_level = hir_level_menu(hir_overall_score)
@@ -391,10 +393,9 @@ while pate == True:
 # Level 7 hiragana
             if hir_chosen_level == "7":
                 if hir_overall_score < 560:
-                    print("In this level we will practise more of the Dakuten characters.")
                     print("You dont have access to this level yet, try making sure you have got all questions right in the previous level")
                 else:
-                    print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_7_hir_dic))
+                    print("In this level we will practise more of the Dakuten characters.We will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_7_hir_dic))
                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
                     random.shuffle(level_7_hir_keys)
                     while start == "go":
@@ -497,13 +498,16 @@ while pate == True:
 
             # Go back to main menu
             if hir_chosen_level == "10":
-                main_menu()
+                sub_menu_result = "0"
+                continue
         # Return to main menu
         if sub_menu_result == "3":
-            main_menu()
-        else:
+            sub_menu_result = "0"
+            continue
+        if sub_menu_result > "3":
             print("That is not an option")
-            main_menu()
+            sub_menu_result = "0"
+            continue
 
     # Katakana alphabet path
     elif phon_alpha_result == "2":
@@ -520,7 +524,7 @@ while pate == True:
                          "バ = ba, ビ = bi, ブ = bu, ベ = be, ボ = bo \n ダ = da,　デ　= de, ド = do \n "
                          "パ = pa, ピ = pi, プ = pu, ペ = pe, ポ = po\n Enter 'x' when you are done.")
             if done == "x":
-                break
+                continue
         while sub_menu_result == "2":
             kat_chosen_level = kat_level_menu(kat_overall_score)
 # Level one katakana
@@ -762,13 +766,9 @@ while pate == True:
 # Level 7 katakana
             if kat_chosen_level == "7":
                 if kat_overall_score < 560:
-                    print("In this level we will practise more of the Dakuten characters.")
-                    print(
-                        "You dont have access to this level yet, try making sure you have got all questions right in the previous level")
+                    print("You dont have access to this level yet, try making sure you have got all questions right in the previous level")
                 else:
-                    print(
-                        "In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(
-                            level_7_kat_dic))
+                    print("In this level we will practise more of the Dakuten characters. We will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_7_kat_dic))
                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
                     random.shuffle(level_7_kat_keys)
                     while start == "go":
@@ -877,10 +877,13 @@ while pate == True:
                         sub_menu()
             # go back to main menu
             if kat_chosen_level == "10":
-                main_menu()
+                sub_menu_result = "0"
+                continue
         # Return to main menu
         if sub_menu_result == "3":
-            main_menu()
-        else:
+            sub_menu_result = "0"
+            continue
+        if sub_menu_result > "3":
             print("That is not an option")
-            main_menu()
+            sub_menu_result = "0"
+            continue
