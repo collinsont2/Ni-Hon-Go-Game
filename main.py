@@ -63,7 +63,7 @@ def sub_menu():
     return sub_menu_choice
 # Menu of hiragana levels the user can choose from
 def hir_level_menu(hir_overall_score):
-    """This function shows the user the number of levels they can choose from and let them select. This also marks a level as complete when the needed score is reached."""
+    """This function shows the user the number of hiragana levels they can choose from and let them select. This also marks a level as complete when the needed score is reached."""
     hir_level_menu_choice = input(
         "Enter the number of the level you want to play.\n Level 1 \n Level 2 \n Level 3 \n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n Final Level (9)\n"
         " Go back to main menu (10) \n LEVEL:")
@@ -109,7 +109,7 @@ def hir_level_menu(hir_overall_score):
 
 # Menu of katakana levels the user can choose from
 def kat_level_menu(kat_overall_score):
-    """This function shows the user the number of levels they can choose from and let them select. This also marks a level as complete when the needed score is reached."""
+    """This function shows the user the number of katakana levels they can choose from and let them select. This also marks a level as complete when the needed score is reached."""
     kat_level_menu_choice = input(
         "Enter the number of the level you want to play.\n Level 1 \n Level 2 \n Level 3 \n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n Final Level (9)\n"
         " Go back to main menu (10) \n LEVEL:")
