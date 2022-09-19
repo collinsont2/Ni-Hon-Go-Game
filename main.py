@@ -1,4 +1,5 @@
 import random
+import time
 # Affirmations
 wrong_response = ["Better luck next time!",  "Keep trying!", "Almost!", "Don't give up"]
 right_response = ["Well-done", "Good job!", "Excellent", "Your getting the hang of this!"]
@@ -63,40 +64,40 @@ def sub_menu():
     return sub_menu_choice
 # Menu of hiragana levels the user can choose from
 def hir_level_menu(hir_overall_score):
-    """This function shows the user the number of levels they can choose from and let them select. This also marks a level as complete when the needed score is reached."""
+    """This function shows the user the number of hiragana levels they can choose from and let them select. This also marks a level as complete when the needed score is reached."""
     hir_level_menu_choice = input(
         "Enter the number of the level you want to play.\n Level 1 \n Level 2 \n Level 3 \n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n Final Level (9)\n"
         " Go back to main menu (10) \n LEVEL:")
     # Show the user if they have completed a level or not
-    if hir_overall_score >= 100:
+    if hir_overall_score >= 100 and hir_overall_score < 200:
         hir_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 \n Level 3 \n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n Final Level (9)\n"
             " Go back to main menu (10) \nLEVEL:")
-    if hir_overall_score >= 200:
+    if hir_overall_score >= 200 and hir_overall_score < 300:
         hir_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 \n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n"
             " Final Level (9)\n Go back to main menu (10) \n LEVEL:")
-    if hir_overall_score >= 300:
+    if hir_overall_score >= 300 and hir_overall_score < 400:
         hir_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n "
             "Final Level (9)\n Go back to main menu (10) \n LEVEL:")
-    if hir_overall_score >= 400:
+    if hir_overall_score >= 400 and hir_overall_score < 460:
         hir_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 \n Level 6 \n Level 7 \n "
             "Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
-    if hir_overall_score >= 460:
+    if hir_overall_score >= 460 and hir_overall_score < 560:
         hir_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 \n Level 7 \n"
             " Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
-    if hir_overall_score >= 560:
+    if hir_overall_score >= 560 and hir_overall_score < 640:
         hir_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n"
             " Level 7 \n Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
-    if hir_overall_score >= 640:
+    if hir_overall_score >= 640 and hir_overall_score < 690:
         hir_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n"
             " Level 7 (Complete)\n Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
-    if hir_overall_score >= 690:
+    if hir_overall_score >= 690 and hir_overall_score < 1380:
         hir_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n"
             " Level 7 (Complete)\n Level 8 (Complete)\n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
@@ -109,40 +110,40 @@ def hir_level_menu(hir_overall_score):
 
 # Menu of katakana levels the user can choose from
 def kat_level_menu(kat_overall_score):
-    """This function shows the user the number of levels they can choose from and let them select. This also marks a level as complete when the needed score is reached."""
+    """This function shows the user the number of katakana levels they can choose from and let them select. This also marks a level as complete when the needed score is reached."""
     kat_level_menu_choice = input(
         "Enter the number of the level you want to play.\n Level 1 \n Level 2 \n Level 3 \n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n Final Level (9)\n"
         " Go back to main menu (10) \n LEVEL:")
     # Show the user if they have completed a level or not
-    if kat_overall_score >= 100:
+    if kat_overall_score >= 100 and kat_overall_score < 200:
         kat_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 \n Level 3 \n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n Final Level (9)\n"
             " Go back to main menu (10) \nLEVEL:")
-    if kat_overall_score >= 200:
+    if kat_overall_score >= 200 and kat_overall_score < 300:
         kat_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 \n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n"
             " Final Level (9)\n Go back to main menu (10) \n LEVEL:")
-    if kat_overall_score >= 300:
+    if kat_overall_score >= 300 and kat_overall_score < 400:
         kat_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n "
             "Final Level (9)\n Go back to main menu (10) \n LEVEL:")
-    if kat_overall_score >= 400:
+    if kat_overall_score >= 400 and kat_overall_score < 460:
         kat_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 \n Level 6 \n Level 7 \n "
             "Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
-    if kat_overall_score >= 460:
+    if kat_overall_score >= 460 and kat_overall_score < 560:
         kat_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 \n Level 7 \n"
             " Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
-    if kat_overall_score >= 560:
+    if kat_overall_score >= 560 and kat_overall_score < 640:
         kat_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n"
             " Level 7 \n Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
-    if kat_overall_score >= 640:
+    if kat_overall_score >= 640 and kat_overall_score < 690:
         kat_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n"
             " Level 7 (Complete)\n Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
-    if kat_overall_score >= 690:
+    if kat_overall_score >= 690 and kat_overall_score < 1380:
         kat_level_menu_choice = input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n"
             " Level 7 (Complete)\n Level 8 (Complete)\n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
@@ -202,15 +203,18 @@ while pate == True:
                                 # Add affirmations for after the points are reached
                             else:
                                 random.shuffle(wrong_response)
-                                print("{}".format(wrong_response[0]))
+                                print("{}, the correct answer was {}".format(wrong_response[0], level_1_hir_dic[hir]))
                     if hir_overall_score > 0 and hir_overall_score < 100:
                         print("Good job! you got {} points, but you need 100 points to move to the next level".format(hir_overall_score))
+                        time.sleep(4.5)
                         start = 'Neutral'
                     elif hir_overall_score == 0:
                         print("Try again")
+                        time.sleep(4.5)
                         start = 'Neutral'
                     elif hir_overall_score == 100:
                         print("Well done you got 100 points! you can move onto the next level.")
+                        time.sleep(4.5)
                         start = 'Neutral'
                 if start == "stop":
                     hir_chosen_level = "0"
@@ -239,15 +243,18 @@ while pate == True:
                                     hir_overall_score += 10
                                 else:
                                     random.shuffle(wrong_response)
-                                    print("{}".format(wrong_response[0]))
+                                    print("{}, the correct answer was {}".format(wrong_response[0], level_2_hir_dic[hir]))
                         if hir_overall_score > 100 and hir_overall_score < 200:
                             print("Good job! you got {} points, but you need 200 points to move to the next level".format(hir_overall_score))
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif hir_overall_score == 100:
                             print("Try again")
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif hir_overall_score == 200:
                             print("Well done you got 200 points! you can move onto the next level.")
+                            time.sleep(4.5)
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
@@ -273,15 +280,18 @@ while pate == True:
                                     hir_overall_score += 10
                                 else:
                                     random.shuffle(wrong_response)
-                                    print("{}".format(wrong_response[0]))
+                                    print("{}, the correct answer was {}".format(wrong_response[0], level_3_hir_dic[hir]))
                         if hir_overall_score > 200 and hir_overall_score < 300:
                             print("Good job! you got {} points, but you need 300 points to move to the next level".format(hir_overall_score))
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif hir_overall_score == 200:
                             print("Try again")
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif hir_overall_score == 300:
                             print("Well done you got 300 points! you can move onto the next level.")
+                            time.sleep(4.5)
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
@@ -307,15 +317,18 @@ while pate == True:
                                     hir_overall_score += 10
                                 else:
                                     random.shuffle(wrong_response)
-                                    print("{}".format(wrong_response[0]))
+                                    print("{}, the correct answer was {}".format(wrong_response[0], level_4_hir_dic[hir]))
                         if hir_overall_score > 300 and hir_overall_score < 400:
                             print("Good job! you got {} points, but you need 400 points to move to the next level".format(hir_overall_score))
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif hir_overall_score == 300:
                             print("Try again")
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif hir_overall_score == 400:
                             print("Well done you got 400 points! you can move onto the next level.")
+                            time.sleep(4.5)
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
@@ -341,15 +354,18 @@ while pate == True:
                                     hir_overall_score += 10
                                 else:
                                     random.shuffle(wrong_response)
-                                    print("{}".format(wrong_response[0]))
+                                    print("{}, the correct answer was {}".format(wrong_response[0], level_5_hir_dic[hir]))
                         if hir_overall_score > 400 and hir_overall_score < 460:
                             print("Good job! you got {} points, but you need 460 points to move to the next level".format(hir_overall_score))
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif hir_overall_score == 400:
                             print("Try again")
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif hir_overall_score == 460:
                             print("Well done you got 460 points! you can move onto the next level.")
+                            time.sleep(4.5)
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
@@ -378,15 +394,18 @@ while pate == True:
                                     hir_overall_score += 10
                                 else:
                                     random.shuffle(wrong_response)
-                                    print("{}".format(wrong_response[0]))
+                                    print("{}, the correct answer was {}".format(wrong_response[0], level_6_hir_dic[hir]))
                         if hir_overall_score > 460 and hir_overall_score < 560:
                             print("Good job! you got {} points, but you need 560 points to move to the next level".format(hir_overall_score))
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif hir_overall_score == 460:
                             print("Try again")
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif hir_overall_score == 560:
                             print("Well done you got 560 points! you can move onto the next level.")
+                            time.sleep(4.5)
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
@@ -412,15 +431,18 @@ while pate == True:
                                     hir_overall_score += 10
                                 else:
                                     random.shuffle(wrong_response)
-                                    print("{}".format(wrong_response[0]))
+                                    print("{}, the correct answer was {}".format(wrong_response[0], level_7_hir_dic[hir]))
                         if hir_overall_score > 560 and hir_overall_score < 640:
                             print("Good job! you got {} points, but you need 640 points to move to the next level".format(hir_overall_score))
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif hir_overall_score == 560:
                             print("Try again")
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif hir_overall_score == 640:
                             print("Well done you got 640 points! you can move onto the next level.")
+                            time.sleep(4.5)
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
@@ -448,15 +470,18 @@ while pate == True:
                                     hir_overall_score += 10
                                 else:
                                     random.shuffle(wrong_response)
-                                    print("{}".format(wrong_response[0]))
+                                    print("{}, the correct answer was {}".format(wrong_response[0], level_8_hir_dic[hir]))
                         if hir_overall_score > 640 and hir_overall_score < 690:
                             print("Good job! you got {} points, but you need 690 points to move to the FINAL level".format(hir_overall_score))
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif hir_overall_score == 640:
                             print("Try again")
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif hir_overall_score == 690:
                             print("Well done you got 690 points! you can move onto the FINAL level.")
+                            time.sleep(4.5)
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
@@ -482,15 +507,18 @@ while pate == True:
                                     hir_overall_score += 10
                                 else:
                                     random.shuffle(wrong_response)
-                                    print("{}".format(wrong_response[0]))
+                                    print("{}, the correct answer was {}".format(wrong_response[0], final_hir_dic[hir]))
                         if hir_overall_score > 690:
                             print("Good job! you got {} points, Keep practicing and see how far you go".format(hir_overall_score))
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif hir_overall_score == 690:
                             print("Try again")
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif hir_overall_score == 1380:
                             print("Well done you got 1380 points! Keep playing and see how many points you can get!")
+                            time.sleep(4.5)
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
@@ -550,16 +578,18 @@ while pate == True:
                                 kat_overall_score += 10
                             else:
                                 random.shuffle(wrong_response)
-                                print("{}".format(wrong_response[0]))
+                                print("{}, the correct answer was {}".format(wrong_response[0], level_1_kat_dic[kat]))
                     if kat_overall_score > 0 and kat_overall_score < 100:
-                        print("Good job! you got {} points, but you need 100 points to move to the next level".format(
-                            kat_overall_score))
+                        print("Good job! you got {} points, but you need 100 points to move to the next level".format(kat_overall_score))
+                        time.sleep(4.5)
                         start = 'Neutral'
                     elif kat_overall_score == 0:
                         print("Try again")
+                        time.sleep(4.5)
                         start = 'Neutral'
                     elif kat_overall_score == 100:
                         print("Well done you got 100 points! you can move onto the next level.")
+                        time.sleep(4.5)
                         start = 'Neutral'
                 if start == "stop":
                     chosen_level = "0"
@@ -589,17 +619,19 @@ while pate == True:
                                     kat_overall_score += 10
                                 else:
                                     random.shuffle(wrong_response)
-                                    print("{}".format(wrong_response[0]))
+                                    print("{}, the correct answer was {}".format(wrong_response[0], level_2_kat_dic[kat]))
                         if kat_overall_score > 100 and kat_overall_score < 200:
                             print(
-                                "Good job! you got {} points, but you need 200 points to move to the next level".format(
-                                    kat_overall_score))
+                                "Good job! you got {} points, but you need 200 points to move to the next level".format(kat_overall_score))
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif kat_overall_score == 100:
                             print("Try again")
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif kat_overall_score == 200:
                             print("Well done you got 200 points! you can move onto the next level.")
+                            time.sleep(4.5)
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
@@ -628,17 +660,19 @@ while pate == True:
                                     kat_overall_score += 10
                                 else:
                                     random.shuffle(wrong_response)
-                                    print("{}".format(wrong_response[0]))
+                                    print("{}, the correct answer was {}".format(wrong_response[0], level_3_kat_dic[kat]))
                         if kat_overall_score > 200 and kat_overall_score < 300:
                             print(
-                                "Good job! you got {} points, but you need 300 points to move to the next level".format(
-                                    kat_overall_score))
+                                "Good job! you got {} points, but you need 300 points to move to the next level".format(kat_overall_score))
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif kat_overall_score == 200:
                             print("Try again")
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif kat_overall_score == 300:
                             print("Well done you got 300 points! you can move onto the next level.")
+                            time.sleep(4.5)
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
@@ -667,17 +701,19 @@ while pate == True:
                                     kat_overall_score += 10
                                 else:
                                     random.shuffle(wrong_response)
-                                    print("{}".format(wrong_response[0]))
+                                    print("{}, the correct answer was {}".format(wrong_response[0], level_4_kat_dic[kat]))
                         if kat_overall_score > 300 and kat_overall_score < 400:
                             print(
-                                "Good job! you got {} points, but you need 400 points to move to the next level".format(
-                                    kat_overall_score))
+                                "Good job! you got {} points, but you need 400 points to move to the next level".format(kat_overall_score))
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif kat_overall_score == 300:
                             print("Try again")
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif kat_overall_score == 400:
                             print("Well done you got 400 points! you can move onto the next level.")
+                            time.sleep(4.5)
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
@@ -706,17 +742,19 @@ while pate == True:
                                     kat_overall_score += 10
                                 else:
                                     random.shuffle(wrong_response)
-                                    print("{}".format(wrong_response[0]))
+                                    print("{}, the correct answer was {}".format(wrong_response[0], level_5_kat_dic[kat]))
                         if kat_overall_score > 400 and kat_overall_score < 460:
                             print(
-                                "Good job! you got {} points, but you need 460 points to move to the next level".format(
-                                    kat_overall_score))
+                                "Good job! you got {} points, but you need 460 points to move to the next level".format(kat_overall_score))
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif kat_overall_score == 400:
                             print("Try again")
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif kat_overall_score == 460:
                             print("Well done you got 460 points! you can move onto the next level.")
+                            time.sleep(4.5)
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
@@ -749,17 +787,19 @@ while pate == True:
                                     kat_overall_score += 10
                                 else:
                                     random.shuffle(wrong_response)
-                                    print("{}".format(wrong_response[0]))
+                                    print("{}, the correct answer was {}".format(wrong_response[0], level_6_kat_dic[kat]))
                         if kat_overall_score > 460 and kat_overall_score < 560:
                             print(
-                                "Good job! you got {} points, but you need 560 points to move to the next level".format(
-                                    kat_overall_score))
+                                "Good job! you got {} points, but you need 560 points to move to the next level".format(kat_overall_score))
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif kat_overall_score == 460:
                             print("Try again")
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif kat_overall_score == 560:
                             print("Well done you got 560 points! you can move onto the next level.")
+                            time.sleep(4.5)
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
@@ -785,17 +825,19 @@ while pate == True:
                                     kat_overall_score += 10
                                 else:
                                     random.shuffle(wrong_response)
-                                    print("{}".format(wrong_response[0]))
+                                    print("{}, the correct answer was {}".format(wrong_response[0], level_7_kat_dic[kat]))
                         if kat_overall_score > 560 and kat_overall_score < 640:
                             print(
-                                "Good job! you got {} points, but you need 640 points to move to the next level".format(
-                                    kat_overall_score))
+                                "Good job! you got {} points, but you need 640 points to move to the next level".format(kat_overall_score))
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif kat_overall_score == 560:
                             print("Try again")
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif kat_overall_score == 640:
                             print("Well done you got 640 points! you can move onto the next level.")
+                            time.sleep(4.5)
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
@@ -827,17 +869,19 @@ while pate == True:
                                     kat_overall_score += 10
                                 else:
                                     random.shuffle(wrong_response)
-                                    print("{}".format(wrong_response[0]))
+                                    print("{}, the correct answer was {}".format(wrong_response[0], level_8_kat_dic[kat]))
                         if kat_overall_score > 640 and kat_overall_score < 690:
                             print(
-                                "Good job! you got {} points, but you need 690 points to move to the FINAL level".format(
-                                    kat_overall_score))
+                                "Good job! you got {} points, but you need 690 points to move to the FINAL level".format(kat_overall_score))
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif kat_overall_score == 640:
                             print("Try again")
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif kat_overall_score == 690:
                             print("Well done you got 690 points! you can move onto the FINAL level.")
+                            time.sleep(4.5)
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
@@ -863,15 +907,18 @@ while pate == True:
                                     kat_overall_score += 10
                                 else:
                                     random.shuffle(wrong_response)
-                                    print("{}".format(wrong_response[0]))
+                                    print("{}, the correct answer was {}".format(wrong_response[0], final_kat_dic[kat]))
                         if kat_overall_score > 690:
                             print("Good job! you got {} points, Keep practicing and see how far you go".format(kat_overall_score))
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif kat_overall_score == 690:
                             print("Try again")
+                            time.sleep(4.5)
                             start = 'Neutral'
                         elif kat_overall_score == 1380:
                             print("Well done you got 1380 points! Keep playing and see how many points you can get!")
+                            time.sleep(4.5)
                             start = 'Neutral'
                     if start == "stop":
                         sub_menu()
