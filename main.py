@@ -7,7 +7,7 @@ right_response = ["Well-done", "Good job!", "Excellent", "Your getting the hang 
 # Track the overall score the user has for each alphabet
 hir_overall_score = 0
 kat_overall_score = 0
-pate = True
+GAME = True
 # Create a dictionary for each level of hiragana
 level_1_hir_dic = {"あ": "a", "い": "i", "う": "u", "え": "e", "お": "o", "か": "ka", "き": "ki", "く": "ku", "け": "ke", "こ": "ko"}
 level_2_hir_dic = {"さ": "sa", "し": "shi", "す": "su", "せ": "se", "そ": "so", "た": "ta", "ち": "chi", "つ": "tsu", "て": "te", "と": "to"}
@@ -160,7 +160,7 @@ name = input("what is your name?\nNAME:")
 print("Hello {}".format(name).title())
 
 # Call menus for user
-while pate == True:
+while GAME == True:
     phon_alpha_result = main_menu()
 
     # Hiragana alphabet path
