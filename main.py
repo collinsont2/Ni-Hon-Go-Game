@@ -154,6 +154,11 @@ def kat_level_menu(kat_overall_score):
             "Go back to main menu (10) \n LEVEL:")
     return kat_level_menu_choice
 
+def level_layout:
+
+
+
+
 # Introduce the game and ask the user for their name
 print("Welcome to Ni Hon Go!")
 name = input("what is your name?\nNAME:")
@@ -182,346 +187,346 @@ while GAME == True:
 
         while sub_menu_result == "2":
             hir_chosen_level = hir_level_menu(hir_overall_score)
-# Level one hiragana
-            if hir_chosen_level == "1":
-                print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_1_hir_dic))
-                print("Please note that if you have already reached the top score in this level it will not add to your score")
-                start = input("Enter 'go' to start and enter 'stop' at anytime to quit:")
-                random.shuffle(level_1_hir_keys)
-                while start == "go":
-                    print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                    for hir in level_1_hir_keys:
-                        answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
-                        if answer == 'stop':
-                            start = 'Neutral'
-                            break
-                        if hir_overall_score < 100:
-                            if answer == level_1_hir_dic[hir]:
-                                random.shuffle(right_response)
-                                print("{}".format(right_response[0]))
-                                hir_overall_score += 10
-                                # Add affirmations for after the points are reached
-                            else:
-                                random.shuffle(wrong_response)
-                                print("{}, the correct answer was {}".format(wrong_response[0], level_1_hir_dic[hir]))
-                    if hir_overall_score > 0 and hir_overall_score < 100:
-                        print("Good job! you got {} points, but you need 100 points to move to the next level".format(hir_overall_score))
-                        time.sleep(4.5)
-                        start = 'Neutral'
-                    elif hir_overall_score == 0:
-                        print("Try again")
-                        time.sleep(4.5)
-                        start = 'Neutral'
-                    elif hir_overall_score == 100:
-                        print("Well done you got 100 points! you can move onto the next level.")
-                        time.sleep(4.5)
-                        start = 'Neutral'
-                if start == "stop":
-                    hir_chosen_level = "0"
-                    start = 'Neutral'
-                    # sub_menu()
-                    break
-# Level 2 hiragana
-            if hir_chosen_level == "2":
-                if hir_overall_score < 100:
-                    print("You dont have access to this level yet, try making sure you have got all questions right in the previous level")
-                else:
-                    print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_2_hir_dic))
-                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
-                    random.shuffle(level_2_hir_keys)
-                    while start == "go":
-                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                        for hir in level_2_hir_keys:
-                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
-                            if answer == 'stop':
-                                start = 'Neutral'
-                                break
-                            if hir_overall_score < 200:
-                                if answer == level_2_hir_dic[hir]:
-                                    random.shuffle(right_response)
-                                    print("{}".format(right_response[0]))
-                                    hir_overall_score += 10
-                                else:
-                                    random.shuffle(wrong_response)
-                                    print("{}, the correct answer was {}".format(wrong_response[0], level_2_hir_dic[hir]))
-                        if hir_overall_score > 100 and hir_overall_score < 200:
-                            print("Good job! you got {} points, but you need 200 points to move to the next level".format(hir_overall_score))
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif hir_overall_score == 100:
-                            print("Try again")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif hir_overall_score == 200:
-                            print("Well done you got 200 points! you can move onto the next level.")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                    if start == "stop":
-                        sub_menu()
-# Level 3 hiragana
-            if hir_chosen_level == "3":
-                if hir_overall_score < 200:
-                    print("You dont have access to this level yet, try making sure you have got all questions right in the previous level")
-                else:
-                    print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_3_hir_dic))
-                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
-                    random.shuffle(level_3_hir_keys)
-                    while start == "go":
-                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                        for hir in level_3_hir_keys:
-                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
-                            if answer == 'stop':
-                                start = 'Neutral'
-                                break
-                            if hir_overall_score < 300:
-                                if answer == level_3_hir_dic[hir]:
-                                    random.shuffle(right_response)
-                                    print("{}".format(right_response[0]))
-                                    hir_overall_score += 10
-                                else:
-                                    random.shuffle(wrong_response)
-                                    print("{}, the correct answer was {}".format(wrong_response[0], level_3_hir_dic[hir]))
-                        if hir_overall_score > 200 and hir_overall_score < 300:
-                            print("Good job! you got {} points, but you need 300 points to move to the next level".format(hir_overall_score))
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif hir_overall_score == 200:
-                            print("Try again")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif hir_overall_score == 300:
-                            print("Well done you got 300 points! you can move onto the next level.")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                    if start == "stop":
-                        sub_menu()
-# Level 4 hiragana
-            if hir_chosen_level == "4":
-                if hir_overall_score < 300:
-                    print("You dont have access to this level yet, try making sure you have got all questions right in the previous level")
-                else:
-                    print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_4_hir_dic))
-                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
-                    random.shuffle(level_4_hir_keys)
-                    while start == "go":
-                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                        for hir in level_4_hir_keys:
-                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
-                            if answer == 'stop':
-                                start = 'Neutral'
-                                break
-                            if hir_overall_score < 400:
-                                if answer == level_4_hir_dic[hir]:
-                                    random.shuffle(right_response)
-                                    print("{}".format(right_response[0]))
-                                    hir_overall_score += 10
-                                else:
-                                    random.shuffle(wrong_response)
-                                    print("{}, the correct answer was {}".format(wrong_response[0], level_4_hir_dic[hir]))
-                        if hir_overall_score > 300 and hir_overall_score < 400:
-                            print("Good job! you got {} points, but you need 400 points to move to the next level".format(hir_overall_score))
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif hir_overall_score == 300:
-                            print("Try again")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif hir_overall_score == 400:
-                            print("Well done you got 400 points! you can move onto the next level.")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                    if start == "stop":
-                        sub_menu()
-# Level 5 hiragana
-            if hir_chosen_level == "5":
-                if hir_overall_score < 400:
-                    print("You dont have access to this level yet, try making sure you have got all questions right in the previous level")
-                else:
-                    print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_5_hir_dic))
-                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
-                    random.shuffle(level_5_hir_keys)
-                    while start == "go":
-                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                        for hir in level_5_hir_keys:
-                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
-                            if answer == 'stop':
-                                start = 'Neutral'
-                                break
-                            if hir_overall_score < 460:
-                                if answer == level_5_hir_dic[hir]:
-                                    random.shuffle(right_response)
-                                    print("{}".format(right_response[0]))
-                                    hir_overall_score += 10
-                                else:
-                                    random.shuffle(wrong_response)
-                                    print("{}, the correct answer was {}".format(wrong_response[0], level_5_hir_dic[hir]))
-                        if hir_overall_score > 400 and hir_overall_score < 460:
-                            print("Good job! you got {} points, but you need 460 points to move to the next level".format(hir_overall_score))
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif hir_overall_score == 400:
-                            print("Try again")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif hir_overall_score == 460:
-                            print("Well done you got 460 points! you can move onto the next level.")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                    if start == "stop":
-                        sub_menu()
-# Level 6 hiragana
-            if hir_chosen_level == "6":
-                if hir_overall_score < 460:
-                    print("You dont have access to this level yet, try making sure you have got all questions right in the previous level")
-                else:
-                    print("In this lesson we will be working with the same characters from the last levels but this time the characters have a extra two dashes on "
-                          "the top right corner. This is called Dakuten, it alters the sound of a character slightly. E.G when Dakuten is added becomes a K sound becomes a G sound"
-                          ", S becomes a Z, H becomes  a B and T becomes D. ")
-                    print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_6_hir_dic))
-                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
-                    random.shuffle(level_6_hir_keys)
-                    while start == "go":
-                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                        for hir in level_6_hir_keys:
-                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
-                            if answer == 'stop':
-                                start = 'Neutral'
-                                break
-                            if hir_overall_score < 560:
-                                if answer == level_6_hir_dic[hir]:
-                                    random.shuffle(right_response)
-                                    print("{}".format(right_response[0]))
-                                    hir_overall_score += 10
-                                else:
-                                    random.shuffle(wrong_response)
-                                    print("{}, the correct answer was {}".format(wrong_response[0], level_6_hir_dic[hir]))
-                        if hir_overall_score > 460 and hir_overall_score < 560:
-                            print("Good job! you got {} points, but you need 560 points to move to the next level".format(hir_overall_score))
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif hir_overall_score == 460:
-                            print("Try again")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif hir_overall_score == 560:
-                            print("Well done you got 560 points! you can move onto the next level.")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                    if start == "stop":
-                        sub_menu()
-# Level 7 hiragana
-            if hir_chosen_level == "7":
-                if hir_overall_score < 560:
-                    print("You dont have access to this level yet, try making sure you have got all questions right in the previous level")
-                else:
-                    print("In this level we will practise more of the Dakuten characters.We will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_7_hir_dic))
-                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
-                    random.shuffle(level_7_hir_keys)
-                    while start == "go":
-                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                        for hir in level_7_hir_keys:
-                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
-                            if answer == 'stop':
-                                start = 'Neutral'
-                                break
-                            if hir_overall_score < 640:
-                                if answer == level_7_hir_dic[hir]:
-                                    random.shuffle(right_response)
-                                    print("{}".format(right_response[0]))
-                                    hir_overall_score += 10
-                                else:
-                                    random.shuffle(wrong_response)
-                                    print("{}, the correct answer was {}".format(wrong_response[0], level_7_hir_dic[hir]))
-                        if hir_overall_score > 560 and hir_overall_score < 640:
-                            print("Good job! you got {} points, but you need 640 points to move to the next level".format(hir_overall_score))
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif hir_overall_score == 560:
-                            print("Try again")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif hir_overall_score == 640:
-                            print("Well done you got 640 points! you can move onto the next level.")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                    if start == "stop":
-                        sub_menu()
-# Level 8 hiragana
-            if hir_chosen_level == "8":
-                if hir_overall_score < 640:
-                    print("You dont have access to this level yet, try making sure you have got all questions right in the previous level")
-                else:
-                    print("In this lesson we will be working with the same characters from the last levels but this time the characters have a small circle on "
-                          "the top right corner. This is called Handakuten, it alters the sound of a character slightly. E.G when Handakuten is added H becomes P")
-                    print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_8_hir_dic))
-                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
-                    random.shuffle(level_8_hir_keys)
-                    while start == "go":
-                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                        for hir in level_8_hir_keys:
-                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
-                            if answer == 'stop':
-                                start = 'Neutral'
-                                break
-                            if hir_overall_score < 690:
-                                if answer == level_8_hir_dic[hir]:
-                                    random.shuffle(right_response)
-                                    print("{}".format(right_response[0]))
-                                    hir_overall_score += 10
-                                else:
-                                    random.shuffle(wrong_response)
-                                    print("{}, the correct answer was {}".format(wrong_response[0], level_8_hir_dic[hir]))
-                        if hir_overall_score > 640 and hir_overall_score < 690:
-                            print("Good job! you got {} points, but you need 690 points to move to the FINAL level".format(hir_overall_score))
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif hir_overall_score == 640:
-                            print("Try again")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif hir_overall_score == 690:
-                            print("Well done you got 690 points! you can move onto the FINAL level.")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                    if start == "stop":
-                        sub_menu()
-# Hiragana final level
-            if hir_chosen_level == "9":
-                if hir_overall_score < 690:
-                     print("You dont have access to this level yet, try making sure you have got all questions right in the previous level")
-                else:
-                    print("This level is the final level! Well done you have done great! \nThis level will go over EVERY character you have learnt so far.")
-                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
-                    random.shuffle(final_hir_keys)
-                    while start == "go":
-                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                        for hir in final_hir_keys:
-                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
-                            if answer == 'stop':
-                                start = 'Neutral'
-                                break
-                            if hir_overall_score < 1380:
-                                if answer == final_hir_dic[hir]:
-                                    random.shuffle(right_response)
-                                    print("{}".format(right_response[0]))
-                                    hir_overall_score += 10
-                                else:
-                                    random.shuffle(wrong_response)
-                                    print("{}, the correct answer was {}".format(wrong_response[0], final_hir_dic[hir]))
-                        if hir_overall_score > 690:
-                            print("Good job! you got {} points, Keep practicing and see how far you go".format(hir_overall_score))
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif hir_overall_score == 690:
-                            print("Try again")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif hir_overall_score == 1380:
-                            print("Well done you got 1380 points! Keep playing and see how many points you can get!")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                    if start == "stop":
-                        sub_menu()
+# # Level one hiragana
+#             if hir_chosen_level == "1":
+#                 print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_1_hir_dic))
+#                 print("Please note that if you have already reached the top score in this level it will not add to your score")
+#                 start = input("Enter 'go' to start and enter 'stop' at anytime to quit:")
+#                 random.shuffle(level_1_hir_keys)
+#                 while start == "go":
+#                     print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                     for hir in level_1_hir_keys:
+#                         answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
+#                         if answer == 'stop':
+#                             start = 'Neutral'
+#                             break
+#                         if hir_overall_score < 100:
+#                             if answer == level_1_hir_dic[hir]:
+#                                 random.shuffle(right_response)
+#                                 print("{}".format(right_response[0]))
+#                                 hir_overall_score += 10
+#                                 # Add affirmations for after the points are reached
+#                             else:
+#                                 random.shuffle(wrong_response)
+#                                 print("{}, the correct answer was {}".format(wrong_response[0], level_1_hir_dic[hir]))
+#                     if hir_overall_score > 0 and hir_overall_score < 100:
+#                         print("Good job! you got {} points, but you need 100 points to move to the next level".format(hir_overall_score))
+#                         time.sleep(4.5)
+#                         start = 'Neutral'
+#                     elif hir_overall_score == 0:
+#                         print("Try again")
+#                         time.sleep(4.5)
+#                         start = 'Neutral'
+#                     elif hir_overall_score == 100:
+#                         print("Well done you got 100 points! you can move onto the next level.")
+#                         time.sleep(4.5)
+#                         start = 'Neutral'
+#                 if start == "stop":
+#                     hir_chosen_level = "0"
+#                     start = 'Neutral'
+#                     # sub_menu()
+#                     break
+# # Level 2 hiragana
+#             if hir_chosen_level == "2":
+#                 if hir_overall_score < 100:
+#                     print("You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+#                 else:
+#                     print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_2_hir_dic))
+#                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+#                     random.shuffle(level_2_hir_keys)
+#                     while start == "go":
+#                         print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                         for hir in level_2_hir_keys:
+#                             answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
+#                             if answer == 'stop':
+#                                 start = 'Neutral'
+#                                 break
+#                             if hir_overall_score < 200:
+#                                 if answer == level_2_hir_dic[hir]:
+#                                     random.shuffle(right_response)
+#                                     print("{}".format(right_response[0]))
+#                                     hir_overall_score += 10
+#                                 else:
+#                                     random.shuffle(wrong_response)
+#                                     print("{}, the correct answer was {}".format(wrong_response[0], level_2_hir_dic[hir]))
+#                         if hir_overall_score > 100 and hir_overall_score < 200:
+#                             print("Good job! you got {} points, but you need 200 points to move to the next level".format(hir_overall_score))
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif hir_overall_score == 100:
+#                             print("Try again")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif hir_overall_score == 200:
+#                             print("Well done you got 200 points! you can move onto the next level.")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                     if start == "stop":
+#                         sub_menu()
+# # Level 3 hiragana
+#             if hir_chosen_level == "3":
+#                 if hir_overall_score < 200:
+#                     print("You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+#                 else:
+#                     print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_3_hir_dic))
+#                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+#                     random.shuffle(level_3_hir_keys)
+#                     while start == "go":
+#                         print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                         for hir in level_3_hir_keys:
+#                             answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
+#                             if answer == 'stop':
+#                                 start = 'Neutral'
+#                                 break
+#                             if hir_overall_score < 300:
+#                                 if answer == level_3_hir_dic[hir]:
+#                                     random.shuffle(right_response)
+#                                     print("{}".format(right_response[0]))
+#                                     hir_overall_score += 10
+#                                 else:
+#                                     random.shuffle(wrong_response)
+#                                     print("{}, the correct answer was {}".format(wrong_response[0], level_3_hir_dic[hir]))
+#                         if hir_overall_score > 200 and hir_overall_score < 300:
+#                             print("Good job! you got {} points, but you need 300 points to move to the next level".format(hir_overall_score))
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif hir_overall_score == 200:
+#                             print("Try again")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif hir_overall_score == 300:
+#                             print("Well done you got 300 points! you can move onto the next level.")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                     if start == "stop":
+#                         sub_menu()
+# # Level 4 hiragana
+#             if hir_chosen_level == "4":
+#                 if hir_overall_score < 300:
+#                     print("You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+#                 else:
+#                     print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_4_hir_dic))
+#                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+#                     random.shuffle(level_4_hir_keys)
+#                     while start == "go":
+#                         print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                         for hir in level_4_hir_keys:
+#                             answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
+#                             if answer == 'stop':
+#                                 start = 'Neutral'
+#                                 break
+#                             if hir_overall_score < 400:
+#                                 if answer == level_4_hir_dic[hir]:
+#                                     random.shuffle(right_response)
+#                                     print("{}".format(right_response[0]))
+#                                     hir_overall_score += 10
+#                                 else:
+#                                     random.shuffle(wrong_response)
+#                                     print("{}, the correct answer was {}".format(wrong_response[0], level_4_hir_dic[hir]))
+#                         if hir_overall_score > 300 and hir_overall_score < 400:
+#                             print("Good job! you got {} points, but you need 400 points to move to the next level".format(hir_overall_score))
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif hir_overall_score == 300:
+#                             print("Try again")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif hir_overall_score == 400:
+#                             print("Well done you got 400 points! you can move onto the next level.")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                     if start == "stop":
+#                         sub_menu()
+# # Level 5 hiragana
+#             if hir_chosen_level == "5":
+#                 if hir_overall_score < 400:
+#                     print("You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+#                 else:
+#                     print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_5_hir_dic))
+#                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+#                     random.shuffle(level_5_hir_keys)
+#                     while start == "go":
+#                         print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                         for hir in level_5_hir_keys:
+#                             answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
+#                             if answer == 'stop':
+#                                 start = 'Neutral'
+#                                 break
+#                             if hir_overall_score < 460:
+#                                 if answer == level_5_hir_dic[hir]:
+#                                     random.shuffle(right_response)
+#                                     print("{}".format(right_response[0]))
+#                                     hir_overall_score += 10
+#                                 else:
+#                                     random.shuffle(wrong_response)
+#                                     print("{}, the correct answer was {}".format(wrong_response[0], level_5_hir_dic[hir]))
+#                         if hir_overall_score > 400 and hir_overall_score < 460:
+#                             print("Good job! you got {} points, but you need 460 points to move to the next level".format(hir_overall_score))
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif hir_overall_score == 400:
+#                             print("Try again")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif hir_overall_score == 460:
+#                             print("Well done you got 460 points! you can move onto the next level.")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                     if start == "stop":
+#                         sub_menu()
+# # Level 6 hiragana
+#             if hir_chosen_level == "6":
+#                 if hir_overall_score < 460:
+#                     print("You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+#                 else:
+#                     print("In this lesson we will be working with the same characters from the last levels but this time the characters have a extra two dashes on "
+#                           "the top right corner. This is called Dakuten, it alters the sound of a character slightly. E.G when Dakuten is added becomes a K sound becomes a G sound"
+#                           ", S becomes a Z, H becomes  a B and T becomes D. ")
+#                     print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_6_hir_dic))
+#                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+#                     random.shuffle(level_6_hir_keys)
+#                     while start == "go":
+#                         print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                         for hir in level_6_hir_keys:
+#                             answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
+#                             if answer == 'stop':
+#                                 start = 'Neutral'
+#                                 break
+#                             if hir_overall_score < 560:
+#                                 if answer == level_6_hir_dic[hir]:
+#                                     random.shuffle(right_response)
+#                                     print("{}".format(right_response[0]))
+#                                     hir_overall_score += 10
+#                                 else:
+#                                     random.shuffle(wrong_response)
+#                                     print("{}, the correct answer was {}".format(wrong_response[0], level_6_hir_dic[hir]))
+#                         if hir_overall_score > 460 and hir_overall_score < 560:
+#                             print("Good job! you got {} points, but you need 560 points to move to the next level".format(hir_overall_score))
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif hir_overall_score == 460:
+#                             print("Try again")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif hir_overall_score == 560:
+#                             print("Well done you got 560 points! you can move onto the next level.")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                     if start == "stop":
+#                         sub_menu()
+# # Level 7 hiragana
+#             if hir_chosen_level == "7":
+#                 if hir_overall_score < 560:
+#                     print("You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+#                 else:
+#                     print("In this level we will practise more of the Dakuten characters.We will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_7_hir_dic))
+#                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+#                     random.shuffle(level_7_hir_keys)
+#                     while start == "go":
+#                         print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                         for hir in level_7_hir_keys:
+#                             answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
+#                             if answer == 'stop':
+#                                 start = 'Neutral'
+#                                 break
+#                             if hir_overall_score < 640:
+#                                 if answer == level_7_hir_dic[hir]:
+#                                     random.shuffle(right_response)
+#                                     print("{}".format(right_response[0]))
+#                                     hir_overall_score += 10
+#                                 else:
+#                                     random.shuffle(wrong_response)
+#                                     print("{}, the correct answer was {}".format(wrong_response[0], level_7_hir_dic[hir]))
+#                         if hir_overall_score > 560 and hir_overall_score < 640:
+#                             print("Good job! you got {} points, but you need 640 points to move to the next level".format(hir_overall_score))
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif hir_overall_score == 560:
+#                             print("Try again")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif hir_overall_score == 640:
+#                             print("Well done you got 640 points! you can move onto the next level.")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                     if start == "stop":
+#                         sub_menu()
+# # Level 8 hiragana
+#             if hir_chosen_level == "8":
+#                 if hir_overall_score < 640:
+#                     print("You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+#                 else:
+#                     print("In this lesson we will be working with the same characters from the last levels but this time the characters have a small circle on "
+#                           "the top right corner. This is called Handakuten, it alters the sound of a character slightly. E.G when Handakuten is added H becomes P")
+#                     print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_8_hir_dic))
+#                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+#                     random.shuffle(level_8_hir_keys)
+#                     while start == "go":
+#                         print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                         for hir in level_8_hir_keys:
+#                             answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
+#                             if answer == 'stop':
+#                                 start = 'Neutral'
+#                                 break
+#                             if hir_overall_score < 690:
+#                                 if answer == level_8_hir_dic[hir]:
+#                                     random.shuffle(right_response)
+#                                     print("{}".format(right_response[0]))
+#                                     hir_overall_score += 10
+#                                 else:
+#                                     random.shuffle(wrong_response)
+#                                     print("{}, the correct answer was {}".format(wrong_response[0], level_8_hir_dic[hir]))
+#                         if hir_overall_score > 640 and hir_overall_score < 690:
+#                             print("Good job! you got {} points, but you need 690 points to move to the FINAL level".format(hir_overall_score))
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif hir_overall_score == 640:
+#                             print("Try again")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif hir_overall_score == 690:
+#                             print("Well done you got 690 points! you can move onto the FINAL level.")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                     if start == "stop":
+#                         sub_menu()
+# # Hiragana final level
+#             if hir_chosen_level == "9":
+#                 if hir_overall_score < 690:
+#                      print("You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+#                 else:
+#                     print("This level is the final level! Well done you have done great! \nThis level will go over EVERY character you have learnt so far.")
+#                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+#                     random.shuffle(final_hir_keys)
+#                     while start == "go":
+#                         print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                         for hir in final_hir_keys:
+#                             answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
+#                             if answer == 'stop':
+#                                 start = 'Neutral'
+#                                 break
+#                             if hir_overall_score < 1380:
+#                                 if answer == final_hir_dic[hir]:
+#                                     random.shuffle(right_response)
+#                                     print("{}".format(right_response[0]))
+#                                     hir_overall_score += 10
+#                                 else:
+#                                     random.shuffle(wrong_response)
+#                                     print("{}, the correct answer was {}".format(wrong_response[0], final_hir_dic[hir]))
+#                         if hir_overall_score > 690:
+#                             print("Good job! you got {} points, Keep practicing and see how far you go".format(hir_overall_score))
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif hir_overall_score == 690:
+#                             print("Try again")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif hir_overall_score == 1380:
+#                             print("Well done you got 1380 points! Keep playing and see how many points you can get!")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                     if start == "stop":
+#                         sub_menu()
 
 
             # Go back to main menu
@@ -556,372 +561,372 @@ while GAME == True:
         while sub_menu_result == "2":
             kat_chosen_level = kat_level_menu(kat_overall_score)
 # Level one katakana
-            if kat_chosen_level == "1":
-                print(
-                    "In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(
-                        level_1_kat_dic))
-                print(
-                    "Please note that if you have already reached the top score in this level it will not add to your score")
-                start = input("Enter 'go' to start and enter 'stop' at anytime to quit:")
-                random.shuffle(level_1_kat_keys)
-                while start == "go":
-                    print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                    for kat in level_1_kat_keys:
-                        answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
-                        if answer == 'stop':
-                            start = 'Neutral'
-                            break
-                        if kat_overall_score < 100:
-                            if answer == level_1_kat_dic[kat]:
-                                random.shuffle(right_response)
-                                print("{}".format(right_response[0]))
-                                kat_overall_score += 10
-                            else:
-                                random.shuffle(wrong_response)
-                                print("{}, the correct answer was {}".format(wrong_response[0], level_1_kat_dic[kat]))
-                    if kat_overall_score > 0 and kat_overall_score < 100:
-                        print("Good job! you got {} points, but you need 100 points to move to the next level".format(kat_overall_score))
-                        time.sleep(4.5)
-                        start = 'Neutral'
-                    elif kat_overall_score == 0:
-                        print("Try again")
-                        time.sleep(4.5)
-                        start = 'Neutral'
-                    elif kat_overall_score == 100:
-                        print("Well done you got 100 points! you can move onto the next level.")
-                        time.sleep(4.5)
-                        start = 'Neutral'
-                if start == "stop":
-                    chosen_level = "0"
-                    sub_menu()
-# Level 2 katakana
-            if kat_chosen_level == "2":
-                if kat_overall_score < 100:
-                    print(
-                        "You dont have access to this level yet, try making sure you have got all questions right in the previous level")
-                else:
-                    print(
-                        "In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(
-                            level_2_kat_dic))
-                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
-                    random.shuffle(level_2_kat_keys)
-                    while start == "go":
-                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                        for kat in level_2_kat_keys:
-                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
-                            if answer == 'stop':
-                                start = 'Neutral'
-                                break
-                            if kat_overall_score < 200:
-                                if answer == level_2_kat_dic[kat]:
-                                    random.shuffle(right_response)
-                                    print("{}".format(right_response[0]))
-                                    kat_overall_score += 10
-                                else:
-                                    random.shuffle(wrong_response)
-                                    print("{}, the correct answer was {}".format(wrong_response[0], level_2_kat_dic[kat]))
-                        if kat_overall_score > 100 and kat_overall_score < 200:
-                            print(
-                                "Good job! you got {} points, but you need 200 points to move to the next level".format(kat_overall_score))
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif kat_overall_score == 100:
-                            print("Try again")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif kat_overall_score == 200:
-                            print("Well done you got 200 points! you can move onto the next level.")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                    if start == "stop":
-                        sub_menu()
-# Level 3 katakana
-            if kat_chosen_level == "3":
-                if kat_overall_score < 200:
-                    print(
-                        "You dont have access to this level yet, try making sure you have got all questions right in the previous level")
-                else:
-                    print(
-                        "In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(
-                            level_3_kat_dic))
-                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
-                    random.shuffle(level_3_kat_keys)
-                    while start == "go":
-                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                        for kat in level_3_kat_keys:
-                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
-                            if answer == 'stop':
-                                start = 'Neutral'
-                                break
-                            if kat_overall_score < 300:
-                                if answer == level_3_kat_dic[kat]:
-                                    random.shuffle(right_response)
-                                    print("{}".format(right_response[0]))
-                                    kat_overall_score += 10
-                                else:
-                                    random.shuffle(wrong_response)
-                                    print("{}, the correct answer was {}".format(wrong_response[0], level_3_kat_dic[kat]))
-                        if kat_overall_score > 200 and kat_overall_score < 300:
-                            print(
-                                "Good job! you got {} points, but you need 300 points to move to the next level".format(kat_overall_score))
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif kat_overall_score == 200:
-                            print("Try again")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif kat_overall_score == 300:
-                            print("Well done you got 300 points! you can move onto the next level.")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                    if start == "stop":
-                        sub_menu()
-# Level 4 katakana
-            if kat_chosen_level == "4":
-                if kat_overall_score < 300:
-                    print(
-                        "You dont have access to this level yet, try making sure you have got all questions right in the previous level")
-                else:
-                    print(
-                        "In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(
-                            level_4_kat_dic))
-                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
-                    random.shuffle(level_4_kat_keys)
-                    while start == "go":
-                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                        for kat in level_4_kat_keys:
-                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
-                            if answer == 'stop':
-                                start = 'Neutral'
-                                break
-                            if kat_overall_score < 400:
-                                if answer == level_4_kat_dic[kat]:
-                                    random.shuffle(right_response)
-                                    print("{}".format(right_response[0]))
-                                    kat_overall_score += 10
-                                else:
-                                    random.shuffle(wrong_response)
-                                    print("{}, the correct answer was {}".format(wrong_response[0], level_4_kat_dic[kat]))
-                        if kat_overall_score > 300 and kat_overall_score < 400:
-                            print(
-                                "Good job! you got {} points, but you need 400 points to move to the next level".format(kat_overall_score))
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif kat_overall_score == 300:
-                            print("Try again")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif kat_overall_score == 400:
-                            print("Well done you got 400 points! you can move onto the next level.")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                    if start == "stop":
-                        sub_menu()
-# Level 5 katakana
-            if kat_chosen_level == "5":
-                if kat_overall_score < 400:
-                    print(
-                        "You dont have access to this level yet, try making sure you have got all questions right in the previous level")
-                else:
-                    print(
-                        "In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(
-                            level_5_kat_dic))
-                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
-                    random.shuffle(level_5_kat_keys)
-                    while start == "go":
-                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                        for kat in level_5_kat_keys:
-                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
-                            if answer == 'stop':
-                                start = 'Neutral'
-                                break
-                            if kat_overall_score < 460:
-                                if answer == level_5_kat_dic[kat]:
-                                    random.shuffle(right_response)
-                                    print("{}".format(right_response[0]))
-                                    kat_overall_score += 10
-                                else:
-                                    random.shuffle(wrong_response)
-                                    print("{}, the correct answer was {}".format(wrong_response[0], level_5_kat_dic[kat]))
-                        if kat_overall_score > 400 and kat_overall_score < 460:
-                            print(
-                                "Good job! you got {} points, but you need 460 points to move to the next level".format(kat_overall_score))
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif kat_overall_score == 400:
-                            print("Try again")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif kat_overall_score == 460:
-                            print("Well done you got 460 points! you can move onto the next level.")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                    if start == "stop":
-                        sub_menu()
-# Level 6 katakana
-            if kat_chosen_level == "6":
-                if kat_overall_score < 460:
-                    print(
-                        "You dont have access to this level yet, try making sure you have got all questions right in the previous level")
-                else:
-                    print(
-                        "In this lesson we will be working with the same characters from the last levels but this time the characters have a extra two dashes on "
-                        "the top right corner. This is called Dakuten, it alters the sound of a character slightly. E.G when Dakuten is added becomes a K sound becomes a G sound"
-                        ", S becomes a Z, H becomes  a B and T becomes D. ")
-                    print(
-                        "In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(
-                            level_6_kat_dic))
-                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
-                    random.shuffle(level_6_kat_keys)
-                    while start == "go":
-                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                        for kat in level_6_kat_keys:
-                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
-                            if answer == 'stop':
-                                start = 'Neutral'
-                                break
-                            if kat_overall_score < 560:
-                                if answer == level_6_kat_dic[kat]:
-                                    random.shuffle(right_response)
-                                    print("{}".format(right_response[0]))
-                                    kat_overall_score += 10
-                                else:
-                                    random.shuffle(wrong_response)
-                                    print("{}, the correct answer was {}".format(wrong_response[0], level_6_kat_dic[kat]))
-                        if kat_overall_score > 460 and kat_overall_score < 560:
-                            print(
-                                "Good job! you got {} points, but you need 560 points to move to the next level".format(kat_overall_score))
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif kat_overall_score == 460:
-                            print("Try again")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif kat_overall_score == 560:
-                            print("Well done you got 560 points! you can move onto the next level.")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                    if start == "stop":
-                        sub_menu()
-# Level 7 katakana
-            if kat_chosen_level == "7":
-                if kat_overall_score < 560:
-                    print("You dont have access to this level yet, try making sure you have got all questions right in the previous level")
-                else:
-                    print("In this level we will practise more of the Dakuten characters. We will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_7_kat_dic))
-                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
-                    random.shuffle(level_7_kat_keys)
-                    while start == "go":
-                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                        for kat in level_7_kat_keys:
-                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
-                            if answer == 'stop':
-                                start = 'Neutral'
-                                break
-                            if kat_overall_score < 640:
-                                if answer == level_7_kat_dic[kat]:
-                                    random.shuffle(right_response)
-                                    print("{}".format(right_response[0]))
-                                    kat_overall_score += 10
-                                else:
-                                    random.shuffle(wrong_response)
-                                    print("{}, the correct answer was {}".format(wrong_response[0], level_7_kat_dic[kat]))
-                        if kat_overall_score > 560 and kat_overall_score < 640:
-                            print(
-                                "Good job! you got {} points, but you need 640 points to move to the next level".format(kat_overall_score))
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif kat_overall_score == 560:
-                            print("Try again")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif kat_overall_score == 640:
-                            print("Well done you got 640 points! you can move onto the next level.")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                    if start == "stop":
-                        sub_menu()
-# Level 8 katakana
-            if kat_chosen_level == "8":
-                if kat_overall_score < 640:
-                    print(
-                        "You dont have access to this level yet, try making sure you have got all questions right in the previous level")
-                else:
-                    print(
-                        "In this lesson we will be working with the same characters from the last levels but this time the characters have a small circle on "
-                        "the top right corner. This is called Handakuten, it alters the sound of a character slightly. E.G when Handakuten is added H becomes P")
-                    print(
-                        "In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(
-                            level_8_kat_dic))
-                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
-                    random.shuffle(level_8_kat_keys)
-                    while start == "go":
-                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                        for kat in level_8_kat_keys:
-                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
-                            if answer == 'stop':
-                                start = 'Neutral'
-                                break
-                            if kat_overall_score < 690:
-                                if answer == level_8_kat_dic[kat]:
-                                    random.shuffle(right_response)
-                                    print("{}".format(right_response[0]))
-                                    kat_overall_score += 10
-                                else:
-                                    random.shuffle(wrong_response)
-                                    print("{}, the correct answer was {}".format(wrong_response[0], level_8_kat_dic[kat]))
-                        if kat_overall_score > 640 and kat_overall_score < 690:
-                            print(
-                                "Good job! you got {} points, but you need 690 points to move to the FINAL level".format(kat_overall_score))
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif kat_overall_score == 640:
-                            print("Try again")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif kat_overall_score == 690:
-                            print("Well done you got 690 points! you can move onto the FINAL level.")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                    if start == "stop":
-                        sub_menu()
-            # Katakana final level
-            if kat_chosen_level == "9":
-                if kat_overall_score < 690:
-                     print("You dont have access to this level yet, try making sure you have got all questions right in the previous level")
-                else:
-                    print("This level is the final level! Well done you have done great! \nThis level will go over EVERY character you have learnt so far.")
-                    start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
-                    random.shuffle(final_kat_keys)
-                    while start == "go":
-                        print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-                        for kat in final_kat_keys:
-                            answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
-                            if answer == 'stop':
-                                start = 'Neutral'
-                                break
-                            if kat_overall_score < 1380:
-                                if answer == final_kat_dic[kat]:
-                                    random.shuffle(right_response)
-                                    print("{}".format(right_response[0]))
-                                    kat_overall_score += 10
-                                else:
-                                    random.shuffle(wrong_response)
-                                    print("{}, the correct answer was {}".format(wrong_response[0], final_kat_dic[kat]))
-                        if kat_overall_score > 690:
-                            print("Good job! you got {} points, Keep practicing and see how far you go".format(kat_overall_score))
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif kat_overall_score == 690:
-                            print("Try again")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                        elif kat_overall_score == 1380:
-                            print("Well done you got 1380 points! Keep playing and see how many points you can get!")
-                            time.sleep(4.5)
-                            start = 'Neutral'
-                    if start == "stop":
-                        sub_menu()
+#             if kat_chosen_level == "1":
+#                 print(
+#                     "In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(
+#                         level_1_kat_dic))
+#                 print(
+#                     "Please note that if you have already reached the top score in this level it will not add to your score")
+#                 start = input("Enter 'go' to start and enter 'stop' at anytime to quit:")
+#                 random.shuffle(level_1_kat_keys)
+#                 while start == "go":
+#                     print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                     for kat in level_1_kat_keys:
+#                         answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
+#                         if answer == 'stop':
+#                             start = 'Neutral'
+#                             break
+#                         if kat_overall_score < 100:
+#                             if answer == level_1_kat_dic[kat]:
+#                                 random.shuffle(right_response)
+#                                 print("{}".format(right_response[0]))
+#                                 kat_overall_score += 10
+#                             else:
+#                                 random.shuffle(wrong_response)
+#                                 print("{}, the correct answer was {}".format(wrong_response[0], level_1_kat_dic[kat]))
+#                     if kat_overall_score > 0 and kat_overall_score < 100:
+#                         print("Good job! you got {} points, but you need 100 points to move to the next level".format(kat_overall_score))
+#                         time.sleep(4.5)
+#                         start = 'Neutral'
+#                     elif kat_overall_score == 0:
+#                         print("Try again")
+#                         time.sleep(4.5)
+#                         start = 'Neutral'
+#                     elif kat_overall_score == 100:
+#                         print("Well done you got 100 points! you can move onto the next level.")
+#                         time.sleep(4.5)
+#                         start = 'Neutral'
+#                 if start == "stop":
+#                     chosen_level = "0"
+#                     sub_menu()
+# # Level 2 katakana
+#             if kat_chosen_level == "2":
+#                 if kat_overall_score < 100:
+#                     print(
+#                         "You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+#                 else:
+#                     print(
+#                         "In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(
+#                             level_2_kat_dic))
+#                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+#                     random.shuffle(level_2_kat_keys)
+#                     while start == "go":
+#                         print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                         for kat in level_2_kat_keys:
+#                             answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
+#                             if answer == 'stop':
+#                                 start = 'Neutral'
+#                                 break
+#                             if kat_overall_score < 200:
+#                                 if answer == level_2_kat_dic[kat]:
+#                                     random.shuffle(right_response)
+#                                     print("{}".format(right_response[0]))
+#                                     kat_overall_score += 10
+#                                 else:
+#                                     random.shuffle(wrong_response)
+#                                     print("{}, the correct answer was {}".format(wrong_response[0], level_2_kat_dic[kat]))
+#                         if kat_overall_score > 100 and kat_overall_score < 200:
+#                             print(
+#                                 "Good job! you got {} points, but you need 200 points to move to the next level".format(kat_overall_score))
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif kat_overall_score == 100:
+#                             print("Try again")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif kat_overall_score == 200:
+#                             print("Well done you got 200 points! you can move onto the next level.")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                     if start == "stop":
+#                         sub_menu()
+# # Level 3 katakana
+#             if kat_chosen_level == "3":
+#                 if kat_overall_score < 200:
+#                     print(
+#                         "You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+#                 else:
+#                     print(
+#                         "In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(
+#                             level_3_kat_dic))
+#                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+#                     random.shuffle(level_3_kat_keys)
+#                     while start == "go":
+#                         print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                         for kat in level_3_kat_keys:
+#                             answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
+#                             if answer == 'stop':
+#                                 start = 'Neutral'
+#                                 break
+#                             if kat_overall_score < 300:
+#                                 if answer == level_3_kat_dic[kat]:
+#                                     random.shuffle(right_response)
+#                                     print("{}".format(right_response[0]))
+#                                     kat_overall_score += 10
+#                                 else:
+#                                     random.shuffle(wrong_response)
+#                                     print("{}, the correct answer was {}".format(wrong_response[0], level_3_kat_dic[kat]))
+#                         if kat_overall_score > 200 and kat_overall_score < 300:
+#                             print(
+#                                 "Good job! you got {} points, but you need 300 points to move to the next level".format(kat_overall_score))
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif kat_overall_score == 200:
+#                             print("Try again")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif kat_overall_score == 300:
+#                             print("Well done you got 300 points! you can move onto the next level.")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                     if start == "stop":
+#                         sub_menu()
+# # Level 4 katakana
+#             if kat_chosen_level == "4":
+#                 if kat_overall_score < 300:
+#                     print(
+#                         "You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+#                 else:
+#                     print(
+#                         "In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(
+#                             level_4_kat_dic))
+#                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+#                     random.shuffle(level_4_kat_keys)
+#                     while start == "go":
+#                         print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                         for kat in level_4_kat_keys:
+#                             answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
+#                             if answer == 'stop':
+#                                 start = 'Neutral'
+#                                 break
+#                             if kat_overall_score < 400:
+#                                 if answer == level_4_kat_dic[kat]:
+#                                     random.shuffle(right_response)
+#                                     print("{}".format(right_response[0]))
+#                                     kat_overall_score += 10
+#                                 else:
+#                                     random.shuffle(wrong_response)
+#                                     print("{}, the correct answer was {}".format(wrong_response[0], level_4_kat_dic[kat]))
+#                         if kat_overall_score > 300 and kat_overall_score < 400:
+#                             print(
+#                                 "Good job! you got {} points, but you need 400 points to move to the next level".format(kat_overall_score))
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif kat_overall_score == 300:
+#                             print("Try again")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif kat_overall_score == 400:
+#                             print("Well done you got 400 points! you can move onto the next level.")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                     if start == "stop":
+#                         sub_menu()
+# # Level 5 katakana
+#             if kat_chosen_level == "5":
+#                 if kat_overall_score < 400:
+#                     print(
+#                         "You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+#                 else:
+#                     print(
+#                         "In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(
+#                             level_5_kat_dic))
+#                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+#                     random.shuffle(level_5_kat_keys)
+#                     while start == "go":
+#                         print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                         for kat in level_5_kat_keys:
+#                             answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
+#                             if answer == 'stop':
+#                                 start = 'Neutral'
+#                                 break
+#                             if kat_overall_score < 460:
+#                                 if answer == level_5_kat_dic[kat]:
+#                                     random.shuffle(right_response)
+#                                     print("{}".format(right_response[0]))
+#                                     kat_overall_score += 10
+#                                 else:
+#                                     random.shuffle(wrong_response)
+#                                     print("{}, the correct answer was {}".format(wrong_response[0], level_5_kat_dic[kat]))
+#                         if kat_overall_score > 400 and kat_overall_score < 460:
+#                             print(
+#                                 "Good job! you got {} points, but you need 460 points to move to the next level".format(kat_overall_score))
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif kat_overall_score == 400:
+#                             print("Try again")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif kat_overall_score == 460:
+#                             print("Well done you got 460 points! you can move onto the next level.")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                     if start == "stop":
+#                         sub_menu()
+# # Level 6 katakana
+#             if kat_chosen_level == "6":
+#                 if kat_overall_score < 460:
+#                     print(
+#                         "You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+#                 else:
+#                     print(
+#                         "In this lesson we will be working with the same characters from the last levels but this time the characters have a extra two dashes on "
+#                         "the top right corner. This is called Dakuten, it alters the sound of a character slightly. E.G when Dakuten is added becomes a K sound becomes a G sound"
+#                         ", S becomes a Z, H becomes  a B and T becomes D. ")
+#                     print(
+#                         "In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(
+#                             level_6_kat_dic))
+#                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+#                     random.shuffle(level_6_kat_keys)
+#                     while start == "go":
+#                         print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                         for kat in level_6_kat_keys:
+#                             answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
+#                             if answer == 'stop':
+#                                 start = 'Neutral'
+#                                 break
+#                             if kat_overall_score < 560:
+#                                 if answer == level_6_kat_dic[kat]:
+#                                     random.shuffle(right_response)
+#                                     print("{}".format(right_response[0]))
+#                                     kat_overall_score += 10
+#                                 else:
+#                                     random.shuffle(wrong_response)
+#                                     print("{}, the correct answer was {}".format(wrong_response[0], level_6_kat_dic[kat]))
+#                         if kat_overall_score > 460 and kat_overall_score < 560:
+#                             print(
+#                                 "Good job! you got {} points, but you need 560 points to move to the next level".format(kat_overall_score))
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif kat_overall_score == 460:
+#                             print("Try again")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif kat_overall_score == 560:
+#                             print("Well done you got 560 points! you can move onto the next level.")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                     if start == "stop":
+#                         sub_menu()
+# # Level 7 katakana
+#             if kat_chosen_level == "7":
+#                 if kat_overall_score < 560:
+#                     print("You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+#                 else:
+#                     print("In this level we will practise more of the Dakuten characters. We will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_7_kat_dic))
+#                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+#                     random.shuffle(level_7_kat_keys)
+#                     while start == "go":
+#                         print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                         for kat in level_7_kat_keys:
+#                             answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
+#                             if answer == 'stop':
+#                                 start = 'Neutral'
+#                                 break
+#                             if kat_overall_score < 640:
+#                                 if answer == level_7_kat_dic[kat]:
+#                                     random.shuffle(right_response)
+#                                     print("{}".format(right_response[0]))
+#                                     kat_overall_score += 10
+#                                 else:
+#                                     random.shuffle(wrong_response)
+#                                     print("{}, the correct answer was {}".format(wrong_response[0], level_7_kat_dic[kat]))
+#                         if kat_overall_score > 560 and kat_overall_score < 640:
+#                             print(
+#                                 "Good job! you got {} points, but you need 640 points to move to the next level".format(kat_overall_score))
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif kat_overall_score == 560:
+#                             print("Try again")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif kat_overall_score == 640:
+#                             print("Well done you got 640 points! you can move onto the next level.")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                     if start == "stop":
+#                         sub_menu()
+# # Level 8 katakana
+#             if kat_chosen_level == "8":
+#                 if kat_overall_score < 640:
+#                     print(
+#                         "You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+#                 else:
+#                     print(
+#                         "In this lesson we will be working with the same characters from the last levels but this time the characters have a small circle on "
+#                         "the top right corner. This is called Handakuten, it alters the sound of a character slightly. E.G when Handakuten is added H becomes P")
+#                     print(
+#                         "In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(
+#                             level_8_kat_dic))
+#                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+#                     random.shuffle(level_8_kat_keys)
+#                     while start == "go":
+#                         print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                         for kat in level_8_kat_keys:
+#                             answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
+#                             if answer == 'stop':
+#                                 start = 'Neutral'
+#                                 break
+#                             if kat_overall_score < 690:
+#                                 if answer == level_8_kat_dic[kat]:
+#                                     random.shuffle(right_response)
+#                                     print("{}".format(right_response[0]))
+#                                     kat_overall_score += 10
+#                                 else:
+#                                     random.shuffle(wrong_response)
+#                                     print("{}, the correct answer was {}".format(wrong_response[0], level_8_kat_dic[kat]))
+#                         if kat_overall_score > 640 and kat_overall_score < 690:
+#                             print(
+#                                 "Good job! you got {} points, but you need 690 points to move to the FINAL level".format(kat_overall_score))
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif kat_overall_score == 640:
+#                             print("Try again")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif kat_overall_score == 690:
+#                             print("Well done you got 690 points! you can move onto the FINAL level.")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                     if start == "stop":
+#                         sub_menu()
+#             # Katakana final level
+#             if kat_chosen_level == "9":
+#                 if kat_overall_score < 690:
+#                      print("You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+#                 else:
+#                     print("This level is the final level! Well done you have done great! \nThis level will go over EVERY character you have learnt so far.")
+#                     start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+#                     random.shuffle(final_kat_keys)
+#                     while start == "go":
+#                         print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+#                         for kat in final_kat_keys:
+#                             answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
+#                             if answer == 'stop':
+#                                 start = 'Neutral'
+#                                 break
+#                             if kat_overall_score < 1380:
+#                                 if answer == final_kat_dic[kat]:
+#                                     random.shuffle(right_response)
+#                                     print("{}".format(right_response[0]))
+#                                     kat_overall_score += 10
+#                                 else:
+#                                     random.shuffle(wrong_response)
+#                                     print("{}, the correct answer was {}".format(wrong_response[0], final_kat_dic[kat]))
+#                         if kat_overall_score > 690:
+#                             print("Good job! you got {} points, Keep practicing and see how far you go".format(kat_overall_score))
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif kat_overall_score == 690:
+#                             print("Try again")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                         elif kat_overall_score == 1380:
+#                             print("Well done you got 1380 points! Keep playing and see how many points you can get!")
+#                             time.sleep(4.5)
+#                             start = 'Neutral'
+#                     if start == "stop":
+#                         sub_menu()
             # go back to main menu
             if kat_chosen_level == "10":
                 sub_menu_result = "0"
