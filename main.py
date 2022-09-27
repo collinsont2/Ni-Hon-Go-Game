@@ -1,14 +1,19 @@
 import random
 import time
+
 # Affirmations
-wrong_response = ["Better luck next time!",  "Keep trying!", "Almost!", "Don't give up"]
-right_response = ["Well-done", "Good job!", "Excellent", "Your getting the hang of this!"]
+
+wrong_response = ["Better luck next time!",  "Keep trying!", "Almost!", "Don't give up!"]
+right_response = ["Well-done!", "Good job!", "Excellent!", "Your getting the hang of this!"]
 
 # Track the overall score the user has for each alphabet
-hir_overall_score = 0
-kat_overall_score = 0
+
+HIR_OVERALL_SCORE = 0
+KAT_OVERALL_SCORE = 0
 GAME = True
+
 # Create a dictionary for each level of hiragana
+
 level_1_hir_dic = {"あ": "a", "い": "i", "う": "u", "え": "e", "お": "o", "か": "ka", "き": "ki", "く": "ku", "け": "ke", "こ": "ko"}
 level_2_hir_dic = {"さ": "sa", "し": "shi", "す": "su", "せ": "se", "そ": "so", "た": "ta", "ち": "chi", "つ": "tsu", "て": "te", "と": "to"}
 level_3_hir_dic = {"な": "na", "に": "ni", "ぬ": "nu", "ね": "ne", "の": "no", "は": "ha", "ひ": "hi", "ふ": "fu", "へ": "he", "ほ": "ho"}
@@ -20,6 +25,7 @@ level_8_hir_dic = {"ぱ": "pa", "ぴ": "pi", "ぷ": "pu", "ぺ": "pe", "ぽ": "p
 final_hir_dic = level_1_hir_dic | level_2_hir_dic | level_3_hir_dic | level_4_hir_dic | level_5_hir_dic | level_6_hir_dic | level_7_hir_dic | level_8_hir_dic
 
 # Create a dictionary for each level of katakana
+
 level_1_kat_dic = {"ア": "a", "イ": "i", "ウ": "u", "エ": "e", "オ": "o", "カ": "ka", "キ": "ki", "ク": "ku", "ケ": "ke", "コ": "ko"}
 level_2_kat_dic = {"サ": "sa", "シ": "shi", "ス": "su", "セ": "se", "ソ": "so", "タ": "ta", "チ": "chi", "ツ": "tsu", "テ": "te", "ト": "to"}
 level_3_kat_dic = {"ナ": "na", "ニ": "ni", "ヌ": "nu", "ネ": "ne", "ノ": "no", "ハ": "ha", "ヒ": "hi", "フ": "fu", "ヘ": "he", "ホ": "ho"}
@@ -29,6 +35,7 @@ level_6_kat_dic = {"ガ": "ga", "ギ": "gi", "グ": "gu", "ゲ": "ge", "ゴ": "g
 level_7_kat_dic = {"バ": "ba", "び": "bi", "ブ": "bu", "ベ": "be", "ボ": "bo", "ダ": "da", "デ": "de", "ド": "do"}
 level_8_kat_dic = {"パ": "pa", "ピ": "pi", "プ": "pu", "ペ": "pe", "ポ": "po"}
 final_kat_dic = level_1_kat_dic | level_2_kat_dic | level_3_kat_dic | level_4_kat_dic | level_5_kat_dic | level_6_kat_dic | level_7_kat_dic | level_8_kat_dic
+
 # Create a list of the keys from the level dictionaries
 
 level_1_hir_keys = list(level_1_hir_dic.keys())
@@ -40,7 +47,6 @@ level_6_hir_keys = list(level_6_hir_dic.keys())
 level_7_hir_keys = list(level_7_hir_dic.keys())
 level_8_hir_keys = list(level_8_hir_dic.keys())
 final_hir_keys = list(final_hir_dic.keys())
-
 level_1_kat_keys = list(level_1_kat_dic.keys())
 level_2_kat_keys = list(level_2_kat_dic.keys())
 level_3_kat_keys = list(level_3_kat_dic.keys())
@@ -52,6 +58,7 @@ level_8_kat_keys = list(level_8_kat_dic.keys())
 final_kat_keys = list(final_kat_dic.keys())
 
 # Create a list of the values from the level dictionaries
+
 level_1_hir_values = list(level_1_hir_dic.values())
 level_2_hir_values = list(level_2_hir_dic.values())
 level_3_hir_values = list(level_3_hir_dic.values())
@@ -72,19 +79,21 @@ level_7_kat_values = list(level_7_kat_dic.values())
 level_8_kat_values = list(level_8_kat_dic.values())
 final_kat_values = list(final_kat_dic.values())
 
-score_to_pass = [100, 200, 300, 400, 460, 560, 640, 690, 1380]
+# Lists for the level layout function
+
+score_to_pass = [0, 100, 200, 300, 400, 460, 560, 640, 690, 1380]
 hir_dictionaries = [level_1_hir_dic, level_2_hir_dic, level_3_hir_dic, level_4_hir_dic, level_5_hir_dic, level_6_hir_dic, level_7_hir_dic, level_8_hir_dic, final_hir_dic]
 kat_dictionaries = [level_1_kat_dic, level_2_kat_dic, level_3_kat_dic, level_4_kat_dic, level_5_kat_dic, level_6_kat_dic, level_7_kat_dic, level_8_kat_dic, final_kat_dic]
 hir_keys = [level_1_hir_keys, level_2_hir_keys, level_3_hir_keys, level_4_hir_keys, level_5_hir_keys, level_6_hir_keys, level_7_hir_keys, level_8_hir_keys, final_hir_keys]
-# hir_keys = [level_1_hir_keys, level_2_hir_keys, level_3_hir_keys, level_4_hir_keys, level_5_hir_keys, level_6_hir_keys, level_7_hir_keys, level_8_hir_keys, final_hir_keys]
+kat_keys = [level_1_kat_keys, level_2_kat_keys, level_3_kat_keys, level_4_kat_keys, level_5_kat_keys, level_6_kat_keys, level_7_kat_keys, level_8_kat_keys, final_kat_keys]
 hir_answers = [level_1_hir_values, level_2_hir_values, level_3_hir_values, level_4_hir_values, level_5_hir_values, level_6_hir_values, level_7_hir_values, level_8_hir_values, final_hir_values]
-# kat_answers = [level_1_hir_values, level_2_hir_values, level_3_hir_values, level_4_hir_values, level_5_hir_values, level_6_hir_values, level_7_hir_values, level_8_hir_values, final_hir_values]
+kat_answers = [level_1_kat_values, level_2_kat_values, level_3_kat_values, level_4_kat_values, level_5_kat_values, level_6_kat_values, level_7_kat_values, level_8_kat_values, final_kat_values]
+
 # Main menu function for the user to choose hiragana or katakana
 def main_menu():
     """ This function is giving the user a choice of which phonetic alphabet they want to practice. """
     phon_alpha_choice = input("What Japanese alphabet would you like to practice (enter number of choice)? \n 1. Hiragana \n 2. Katakana \n Alphabet:")
     return phon_alpha_choice
-
 # Sub menu function of what the user wants to do with chosen alphabet
 def sub_menu():
     """ This function is giving the user a choice on what to do with the chosen alphabet, as well as going back to choose a different alphabet."""
@@ -93,132 +102,214 @@ def sub_menu():
 # Menu of hiragana levels the user can choose from
 def hir_level_menu(hir_overall_score):
     """This function shows the user the number of hiragana levels they can choose from and let them select. This also marks a level as complete when the needed score is reached."""
-    hir_level_menu_choice = input(
+    hir_level_menu_choice = int(input(
         "Enter the number of the level you want to play.\n Level 1 \n Level 2 \n Level 3 \n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n Final Level (9)\n"
-        " Go back to main menu (10) \n LEVEL:")
+        " Go back to main menu (10) \n LEVEL:"))
     # Show the user if they have completed a level or not
     if hir_overall_score >= 100 and hir_overall_score < 200:
-        hir_level_menu_choice = input(
+        hir_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 \n Level 3 \n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n Final Level (9)\n"
-            " Go back to main menu (10) \nLEVEL:")
+            " Go back to main menu (10) \nLEVEL:"))
     if hir_overall_score >= 200 and hir_overall_score < 300:
-        hir_level_menu_choice = input(
+        hir_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 \n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n"
-            " Final Level (9)\n Go back to main menu (10) \n LEVEL:")
+            " Final Level (9)\n Go back to main menu (10) \n LEVEL:"))
     if hir_overall_score >= 300 and hir_overall_score < 400:
-        hir_level_menu_choice = input(
+        hir_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n "
-            "Final Level (9)\n Go back to main menu (10) \n LEVEL:")
+            "Final Level (9)\n Go back to main menu (10) \n LEVEL:"))
     if hir_overall_score >= 400 and hir_overall_score < 460:
-        hir_level_menu_choice = input(
+        hir_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 \n Level 6 \n Level 7 \n "
-            "Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
+            "Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:"))
     if hir_overall_score >= 460 and hir_overall_score < 560:
-        hir_level_menu_choice = input(
+        hir_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 \n Level 7 \n"
-            " Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
+            " Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:"))
     if hir_overall_score >= 560 and hir_overall_score < 640:
-        hir_level_menu_choice = input(
+        hir_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n"
-            " Level 7 \n Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
+            " Level 7 \n Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:"))
     if hir_overall_score >= 640 and hir_overall_score < 690:
-        hir_level_menu_choice = input(
+        hir_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n"
-            " Level 7 (Complete)\n Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
+            " Level 7 (Complete)\n Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:"))
     if hir_overall_score >= 690 and hir_overall_score < 1380:
-        hir_level_menu_choice = input(
+        hir_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n"
-            " Level 7 (Complete)\n Level 8 (Complete)\n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
+            " Level 7 (Complete)\n Level 8 (Complete)\n Final Level (9)\n Go back to main menu (10) \n LEVEL:"))
     if hir_overall_score >= 1380:
-        hir_level_menu_choice = input(
+        hir_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n "
             "Level 7 (Complete)\n Level 8 (Complete)\n Final Level (9)(Complete)\n"
-            "Go back to main menu (10) \n LEVEL:")
+            "Go back to main menu (10) \n LEVEL:"))
     return hir_level_menu_choice
-
 # Menu of katakana levels the user can choose from
 def kat_level_menu(kat_overall_score):
     """This function shows the user the number of katakana levels they can choose from and let them select. This also marks a level as complete when the needed score is reached."""
     kat_level_menu_choice = int(input(
-        "Enter the number of the level you want to play.\n Level 1 \n Level 2 \n Level 3 \n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n Final Level (9)\n"
-        " Go back to main menu (10) \n LEVEL:"))
+        "Enter the number of the level you want to play.\n Level 1 \n Level 2 \n Level 3 \n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:"))
     # Show the user if they have completed a level or not
     if kat_overall_score >= 100 and kat_overall_score < 200:
-        kat_level_menu_choice = input(
+        kat_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 \n Level 3 \n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n Final Level (9)\n"
-            " Go back to main menu (10) \nLEVEL:")
+            " Go back to main menu (10) \nLEVEL:"))
     if kat_overall_score >= 200 and kat_overall_score < 300:
-        kat_level_menu_choice = input(
+        kat_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 \n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n"
-            " Final Level (9)\n Go back to main menu (10) \n LEVEL:")
+            " Final Level (9)\n Go back to main menu (10) \n LEVEL:"))
     if kat_overall_score >= 300 and kat_overall_score < 400:
-        kat_level_menu_choice = input(
+        kat_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 \n Level 5 \n Level 6 \n Level 7 \n Level 8 \n "
-            "Final Level (9)\n Go back to main menu (10) \n LEVEL:")
+            "Final Level (9)\n Go back to main menu (10) \n LEVEL:"))
     if kat_overall_score >= 400 and kat_overall_score < 460:
-        kat_level_menu_choice = input(
+        kat_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 \n Level 6 \n Level 7 \n "
-            "Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
+            "Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:"))
     if kat_overall_score >= 460 and kat_overall_score < 560:
-        kat_level_menu_choice = input(
+        kat_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 \n Level 7 \n"
-            " Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
+            " Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:"))
     if kat_overall_score >= 560 and kat_overall_score < 640:
-        kat_level_menu_choice = input(
+        kat_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n"
-            " Level 7 \n Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
+            " Level 7 \n Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:"))
     if kat_overall_score >= 640 and kat_overall_score < 690:
-        kat_level_menu_choice = input(
+        kat_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n"
-            " Level 7 (Complete)\n Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
+            " Level 7 (Complete)\n Level 8 \n Final Level (9)\n Go back to main menu (10) \n LEVEL:"))
     if kat_overall_score >= 690 and kat_overall_score < 1380:
-        kat_level_menu_choice = input(
+        kat_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n"
-            " Level 7 (Complete)\n Level 8 (Complete)\n Final Level (9)\n Go back to main menu (10) \n LEVEL:")
+            " Level 7 (Complete)\n Level 8 (Complete)\n Final Level (9)\n Go back to main menu (10) \n LEVEL:"))
     if kat_overall_score >= 1380:
-        kat_level_menu_choice = input(
+        kat_level_menu_choice = int(input(
             "Enter the number of the level you want to play.\n Level 1 (Complete)\n Level 2 (Complete)\n Level 3 (Complete)\n Level 4 (Complete)\n Level 5 (Complete)\n Level 6 (Complete)\n "
             "Level 7 (Complete)\n Level 8 (Complete)\n Final Level (9)(Complete)\n"
-            "Go back to main menu (10) \n LEVEL:")
+            "Go back to main menu (10) \n LEVEL:"))
     return kat_level_menu_choice
 
-def hir_level_layout(hir_overall_score, hir_level_menu_choice, score_to_pass, hir_dictionaries, hir_keys):
-    if hir_chosen_level == hir_level_menu_choice:
-       if hir_overall_score < score_to_pass[hir_level_menu_choice - 2]:
-           print("You don't have access to this level yet, try making sure you have got all questions right in the previous level")
-       else:
-           print("In this level we will be practising:\n {}\nWe encourage you to repeat the sounds out loud.".format(hir_dictionaries[hir_level_menu_choice - 1]))
-           start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
-           random.shuffle(hir_keys[hir_level_menu_choice - 1])
-           while start == "go":
-               print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
-               for hir in hir_keys[hir_level_menu_choice - 1]:
-                   answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, hir_overall_score))
-                   if answer == 'stop':
-                       start = 'Neutral'
-                       break
-                   if hir_overall_score < score_to_pass[hir_level_menu_choice - 1]:
-                       if answer == level_3_hir_dic[hir]:
-                           random.shuffle(right_response)
-                           print("{}".format(right_response[0]))
-                           hir_overall_score += 10
-                       else:
-                           random.shuffle(wrong_response)
-                           print("{}, the correct answer was {}".format(wrong_response[0], level_3_hir_dic[hir]))
-               if hir_overall_score > score_to_pass[hir_level_menu_choice - 2] and hir_overall_score < score_to_pass[hir_level_menu_choice - 1]:
-                   print("Good job! you got {} points, but you need {} points to move to the next level".format(hir_overall_score, score_to_pass[hir_level_menu_choice - 1]))
-                   time.sleep(4.5)
-                   start = 'Neutral'
-               elif hir_overall_score == score_to_pass[hir_level_menu_choice - 2]:
-                   print("Try again")
-                   time.sleep(4.5)
-                   start = 'Neutral'
-               elif hir_overall_score == score_to_pass[hir_level_menu_choice - 1]:
-                   print("Well done you got {} points! you can move onto the next level.".format(score_to_pass[hir_level_menu_choice - 1]))
-                   time.sleep(4.5)
-                   start = 'Neutral'
-           if start == "stop":
-               sub_menu()
+# Hiragana template for levels
+def hir_level_layout(right_response, wrong_response, hir_chosen_level, HIR_OVERALL_SCORE, score_to_pass, hir_dictionaries, hir_keys):
+    """There is a total of 18 levels for the user, this function creates the layout all of those levels use. Instead of writing out every level."""
+    if hir_chosen_level > 0 and hir_chosen_level < 10:
+        if HIR_OVERALL_SCORE < score_to_pass[hir_chosen_level - 3]:
+            print("You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+        else:
+            print("In this level we will be practising:\n {}\nWe encourage you to repeat the sounds out loud.".format(hir_dictionaries[hir_chosen_level - 1]))
+            start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+            random.shuffle(hir_keys[hir_chosen_level - 1])
+            while start == "go":
+                print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+                for hir in hir_keys[hir_chosen_level - 1]:
+                    answer = input("{}:                    SCORE:{} \nANSWER: ".format(hir, HIR_OVERALL_SCORE))
+                    if answer == 'stop':
+                        start = 'Neutral'
+                        break
+                    if HIR_OVERALL_SCORE < score_to_pass[hir_chosen_level - 2]:
+                        if answer == hir_answers[hir_chosen_level - 1]:
+                            random.shuffle(right_response)
+                            print("{}".format(right_response[0]))
+                            HIR_OVERALL_SCORE += 10
+                        else:
+                            random.shuffle(wrong_response)
+                            print("{} \nThe correct answer was {}.".format(wrong_response[0], hir_answers[hir_chosen_level - 1]))
+                if HIR_OVERALL_SCORE > score_to_pass[hir_chosen_level - 3] and HIR_OVERALL_SCORE < score_to_pass[hir_chosen_level - 2]:
+                    print("Good job! you got {} points, but you need {} points to move to the next level".format(HIR_OVERALL_SCORE, score_to_pass[hir_chosen_level - 2]))
+                    time.sleep(4.5)
+                    start = 'Neutral'
+                elif HIR_OVERALL_SCORE == score_to_pass[hir_chosen_level - 3]:
+                    print("Try again")
+                    time.sleep(4.5)
+                    start = 'Neutral'
+                elif HIR_OVERALL_SCORE == score_to_pass[hir_chosen_level - 2]:
+                    print("Well done you got {} points! you can move onto the next level.".format(score_to_pass[hir_chosen_level - 2]))
+                    time.sleep(4.5)
+                    start = 'Neutral'
+            if start == "stop":
+                sub_menu()
+    return HIR_OVERALL_SCORE
+
+# Katakana template for levels
+def kat_level_layout(right_response, wrong_response, kat_chosen_level, kat_overall_score, score_to_pass, kat_dictionaries, kat_keys):
+    """There is a total of 18 levels for the user, this function creates the layout all of those levels use. Instead of writing out every level."""
+    if kat_chosen_level > 0 and kat_chosen_level < 10:
+        if kat_overall_score < score_to_pass[kat_chosen_level - 3]:
+            print("You don't have access to this level yet, try making sure you have got all questions right in the previous level")
+        else:
+            print("In this level we will be practising:\n {}\nWe encourage you to repeat the sounds out loud.".format(kat_dictionaries[kat_chosen_level - 1]))
+            start = input("enter 'go' to start and enter 'stop' at anytime to quit:")
+            random.shuffle(kat_keys[kat_chosen_level - 1])
+            while start == "go":
+                print(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
+                for kat in kat_keys[kat_chosen_level - 1]:
+                    answer = input("{}:                    SCORE:{} \nANSWER: ".format(kat, kat_overall_score))
+                    if answer == 'stop':
+                        start = 'Neutral'
+                        break
+                    if kat_overall_score < score_to_pass[kat_chosen_level - 2]:
+                        if answer == kat_answers[kat_chosen_level - 1]:
+                            random.shuffle(right_response)
+                            print("{}".format(right_response[0]))
+                            kat_overall_score += 10
+                        else:
+                            random.shuffle(wrong_response)
+                            print("{} \nThe correct answer was {}.".format(wrong_response[0], kat_answers[kat_chosen_level - 1]))
+                if kat_overall_score > score_to_pass[kat_chosen_level - 3] and kat_overall_score < score_to_pass[kat_chosen_level - 2]:
+                    print("Good job! you got {} points, but you need {} points to move to the next level".format(kat_overall_score, score_to_pass[kat_chosen_level - 2]))
+                    time.sleep(4.5)
+                    start = 'Neutral'
+                elif kat_overall_score == score_to_pass[kat_chosen_level - 3]:
+                    print("Try again")
+                    time.sleep(4.5)
+                    start = 'Neutral'
+                elif kat_overall_score == score_to_pass[kat_chosen_level - 2]:
+                    print("Well done you got {} points! you can move onto the next level.".format(score_to_pass[kat_chosen_level - 2]))
+                    time.sleep(4.5)
+                    start = 'Neutral'
+            if start == "stop":
+                sub_menu()
+    return kat_overall_score
+
+# Introduce the game and ask the user for their name
+print("Welcome to Ni Hon Go!")
+name = input("what is your name?\nNAME:")
+print("Hello {}".format(name).title())
+# Call menus for user
+while GAME == True:
+    phon_alpha_result = main_menu()
+    # Hiragana alphabet path
+    if phon_alpha_result == "1":
+        sub_menu_result = sub_menu()
+        # Print preview of hiragana
+        if sub_menu_result == "1":
+            done = input("Hiragana Chart: \n あ = a, い = i　う = u,　え = e,　お = o \n か = ka, き = ki, く = ku, け = ke, こ = ko\n "
+                         "さ = sa, し = shi, す = su, せ = se, そ = so \n た = ta, ち = chi, つ = tsu, て = te, と = to\n "
+                         "な = na, に = ni, ぬ = nu, ね = ne, の = no \n は = ha, ひ = hi, ふ = fu, へ = he, ほ = ho\n "
+                         "ま = ma, み = mi, む = mu, め = me, も = mo \n ら = ra, り = ri, る = ru, れ = re, ろ = ro \n "
+                         "や = ya, ゆ = yu, よ = yo \n わ = wa, ん = n, を = wo\n "
+                         "が = ga, ぎ = gi, ぐ = gu, げ = ge, ご = go \n ざ = za, じ = ji, ず = zu, ぜ = ze, そ = zo\n "
+                         "ば = ba, び = bi, ぶ = bu, べ = be, ぼ = bo \n だ = da, で = de, ど = do \n "
+                         "ぱ = pa, ぴ = pi, ぷ = pu, ぺ = pe, ぽ = po\n Enter 'x' when you are done.")
+            if done == "x":
+                continue
+        while sub_menu_result == "2":
+            hir_chosen_level = hir_level_menu(HIR_OVERALL_SCORE)
+
+ # Go back to main menu
+            if hir_chosen_level == "10":
+                sub_menu_result = "0"
+                continue
+            else:
+                HIR_OVERALL_SCORE = hir_level_layout(right_response, wrong_response, hir_chosen_level, HIR_OVERALL_SCORE, score_to_pass, hir_dictionaries, hir_keys)
+        # Return to main menu
+        if sub_menu_result == "3":
+            sub_menu_result = "0"
+            continue
+        if sub_menu_result > "3":
+            print("That is not an option")
+            sub_menu_result = "0"
+            continue
 
 
 
@@ -250,7 +341,7 @@ while GAME == True:
                 continue
 
         while sub_menu_result == "2":
-            hir_chosen_level = hir_level_menu(hir_overall_score)
+            hir_chosen_level = hir_level_menu(HIR_OVERALL_SCORE)
 # # Level one hiragana
 #             if hir_chosen_level == "1":
 #                 print("In this level we will be practicing:\n {}\nWe encourage you to repeat the sounds out loud.".format(level_1_hir_dic))
@@ -623,7 +714,7 @@ while GAME == True:
             if done == "x":
                 continue
         while sub_menu_result == "2":
-            kat_chosen_level = kat_level_menu(kat_overall_score)
+            kat_chosen_level = kat_level_menu(KAT_OVERALL_SCORE)
 # Level one katakana
 #             if kat_chosen_level == "1":
 #                 print(
