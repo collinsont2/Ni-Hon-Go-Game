@@ -1094,3 +1094,25 @@ while GAME == True:
             print("That is not an option")
             sub_menu_result = "0"
             continue
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
